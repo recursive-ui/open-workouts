@@ -11,7 +11,7 @@ class Landingpage extends StatelessWidget {
   Widget build(BuildContext context) {
     List<dynamic>? nextProgram = getNextExerciseSet();
     Program? program = nextProgram?[0];
-    ExerciseSet set = nextProgram?[1];
+    ExerciseSet? set = nextProgram?[1];
 
     return Padding(
       padding: const EdgeInsets.all(20.0),
@@ -26,7 +26,7 @@ class Landingpage extends StatelessWidget {
             const SizedBox(height: 16.0),
             nextProgram != null
                 ? ExerciseSetCard(
-                    set: set,
+                    set: set ?? ExerciseSet(),
                     onPressed: () => Navigator.push(
                       context,
                       MaterialPageRoute(
