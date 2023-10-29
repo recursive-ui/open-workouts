@@ -25,23 +25,26 @@ class ExercisePage extends StatelessWidget {
               ),
             );
           }
-          return ListView.builder(
-            itemCount: boxMap.values.length,
-            itemBuilder: (context, index) {
-              Exercise? curExer = boxMap.values.elementAt(index);
-              return Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4.0),
-                child: ExerciseCard(
-                  curExer: curExer,
-                  exerciseIndex: index,
-                  onPressed: () {
-                    curExer.disabled = true;
-                    box.put(boxMap.keys.elementAt(index), curExer);
-                  },
-                ),
-              );
-            },
+          return Padding(
+            padding: const EdgeInsets.only(bottom: 32.0),
+            child: ListView.builder(
+              itemCount: boxMap.values.length,
+              itemBuilder: (context, index) {
+                Exercise? curExer = boxMap.values.elementAt(index);
+                return Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 16.0, vertical: 4.0),
+                  child: ExerciseCard(
+                    curExer: curExer,
+                    exerciseIndex: index,
+                    onPressed: () {
+                      curExer.disabled = true;
+                      box.put(boxMap.keys.elementAt(index), curExer);
+                    },
+                  ),
+                );
+              },
+            ),
           );
         },
       ),

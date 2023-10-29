@@ -11,27 +11,19 @@ class Exercise extends HiveObject {
   @HiveField(2)
   String? type;
   @HiveField(3)
-  String? level;
-  @HiveField(4)
   String? imageUrl;
-  @HiveField(5)
+  @HiveField(4)
   String? notes;
-  @HiveField(6)
+  @HiveField(5)
   bool? disabled;
 
   Exercise(
-      {required this.name,
-      this.muscle,
-      this.type,
-      this.level,
-      this.imageUrl,
-      this.notes});
+      {required this.name, this.muscle, this.type, this.imageUrl, this.notes});
 
   Exercise.fromMap(Map<String, dynamic> map)
       : name = map['name']!,
         muscle = map['muscle'],
         type = map['type'],
-        level = map['level'].toString(),
         imageUrl = map['imageUrl'],
         notes = map['notes'];
 
@@ -39,36 +31,12 @@ class Exercise extends HiveObject {
         'name': name,
         if (muscle != null) 'muscle': muscle!,
         if (type != null) 'muscleGroup': type!,
-        if (level != null) 'level': level!,
         if (imageUrl != null) 'imageUrl': imageUrl!,
         if (notes != null) 'lastName': notes!,
       };
 }
 
 @HiveType(typeId: 2)
-class Program extends HiveObject {
-  @HiveField(0)
-  String name;
-  @HiveField(1)
-  List<ExerciseSet>? exerciseSets;
-  @HiveField(2)
-  bool? isCurrent = false;
-
-  Program({required this.name, this.exerciseSets, this.isCurrent = false});
-
-  Program.fromMap(Map<String, dynamic> map)
-      : name = map['name'],
-        isCurrent = map['isCurrent'],
-        exerciseSets = map['exerciseSets'];
-
-  Map<String, dynamic> toMap() => {
-        'name': name,
-        'isCurrent': isCurrent,
-        if (exerciseSets != null) 'exerciseSets': exerciseSets,
-      };
-}
-
-@HiveType(typeId: 3)
 class Results extends HiveObject {
   @HiveField(0)
   DateTime date;
@@ -83,9 +51,9 @@ class Results extends HiveObject {
   @HiveField(5)
   String? notes;
   @HiveField(6)
-  String? program;
+  String? exerciseSet;
 
-  Results({required this.date, required this.exerciseName, this.program});
+  Results({required this.date, required this.exerciseName, this.exerciseSet});
 
   int get sets {
     if (reps != null) {
@@ -112,7 +80,7 @@ class Results extends HiveObject {
         measure = map['measure'],
         units = map['units'],
         notes = map['notes'],
-        program = map['program'];
+        exerciseSet = map['exerciseSet'];
 
   Map<String, dynamic> toMap() => {
         'date': date,
@@ -121,40 +89,59 @@ class Results extends HiveObject {
         if (measure != null) 'measure': measure,
         if (units != null) 'units': units,
         if (notes != null) 'notes': notes,
-        if (program != null) 'program': program,
+        if (exerciseSet != null) 'excerciseSet': exerciseSet,
       };
 }
 
-@HiveType(typeId: 4)
+@HiveType(typeId: 3)
 class ExerciseSet extends HiveObject {
   @HiveField(0)
   String name;
   @HiveField(1)
-  int dayOfWeek;
+  List<int> daysOfWeek = [];
   @HiveField(2)
   List<String> exercises = [];
   @HiveField(3)
   List<int> targetSets = [];
 
-  ExerciseSet({this.name = '', this.dayOfWeek = 0});
+  ExerciseSet({
+    required this.name,
+    this.daysOfWeek = const [],
+    this.exercises = const [],
+    this.targetSets = const [],
+  });
 
-  String getWeekdayName() {
-    switch (dayOfWeek) {
+  String getWeekdayName(int weekDay) {
+    switch (weekDay) {
       case 1:
-        return 'Monday';
+        return 'Mon';
       case 2:
-        return 'Tuesday';
+        return 'Tues';
       case 3:
-        return 'Wednesday';
+        return 'Wed';
       case 4:
-        return 'Thursday';
+        return 'Thurs';
       case 5:
-        return 'Friday';
+        return 'Fri';
       case 6:
-        return 'Saturday';
+        return 'Sat';
       default:
-        return 'Sunday';
+        return 'Sun';
     }
+  }
+
+  String get getStringDaysOfWeek {
+    if (daysOfWeek.isEmpty) {
+      return '';
+    }
+    return daysOfWeek.map((e) => getWeekdayName(e)).join(', ');
+  }
+
+  int getNextExerciseDay(int weekDay) {
+    if (daysOfWeek.isEmpty) {
+      return 0;
+    }
+    return daysOfWeek.firstWhere((e) => e >= weekDay, orElse: () => 6);
   }
 
   void addExercise({required String name, int target = 3}) {
@@ -180,12 +167,12 @@ class ExerciseSet extends HiveObject {
 
   ExerciseSet.fromMap(Map<String, dynamic> map)
       : name = map['name'],
-        dayOfWeek = map['dayOfWeek'],
+        daysOfWeek = map['daysOfWeek'],
         exercises = map['exercises'];
 
   Map<String, dynamic> toMap() => {
         'name': name,
-        'dayOfWeek': dayOfWeek,
+        'daysOfWeek': daysOfWeek,
         'exercises': exercises,
         'targetSets': targetSets,
       };

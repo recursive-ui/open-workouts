@@ -6,12 +6,10 @@ import 'package:open_workouts/utilities/constants.dart';
 import 'package:open_workouts/widgets/log_exercise.dart';
 
 class LoggingPage extends StatefulWidget {
-  final Program? currentProgram;
-  final ExerciseSet? currentSet;
+  final ExerciseSet? set;
   const LoggingPage({
     Key? key,
-    this.currentProgram,
-    this.currentSet,
+    this.set,
   }) : super(key: key);
 
   @override
@@ -19,35 +17,35 @@ class LoggingPage extends StatefulWidget {
 }
 
 class _LoggingPageState extends State<LoggingPage> {
+  final List<ExerciseSet> exerciseSets =
+      Hive.box<ExerciseSet>('sets').values.toList();
   final List<Exercise> exercises =
       Hive.box<Exercise>('exercises').values.toList();
-  final List<Program> programs = Hive.box<Program>('programs').values.toList();
   final Box<Results> resultsBox = Hive.box<Results>('results');
   final DateFormat formatter = DateFormat('dd-MM');
+  ExerciseSet? selectedSet;
   Exercise? selectedExercise;
-  List<String>? programNames;
-  List<ExerciseSet>? sets;
   List<Exercise> exerciseList = [];
   List<Results> results = [];
-  ExerciseSet? set;
-  Program? program;
   late DateTime now;
   late DateTime date = DateTime.now();
 
-  void updateProgram(newProgram) {
+  void updateSet(newSet) {
     setState(() {
-      program = newProgram;
-      sets = program!.exerciseSets;
-      set = program!.exerciseSets![0];
-      if (set != null) {
-        exerciseList =
-            exercises.where((e) => set!.exercises.contains(e.name)).toList();
+      selectedSet = newSet;
+      if (selectedSet != null) {
+        exerciseList = exercises
+            .where((e) => selectedSet!.exercises.contains(e.name))
+            .toList();
         results = exerciseList
             .map((e) => Results(
-                date: date, exerciseName: e.name, program: program!.name))
+                  date: date,
+                  exerciseName: e.name,
+                  exerciseSet: selectedSet?.name,
+                ))
             .toList();
-        for (int i = 0; i < set!.targetSets.length; i++) {
-          results[i].sets = set!.targetSets[i];
+        for (int i = 0; i < selectedSet!.targetSets.length; i++) {
+          results[i].sets = selectedSet!.targetSets[i];
         }
       } else {
         exerciseList = [];
@@ -56,23 +54,98 @@ class _LoggingPageState extends State<LoggingPage> {
     });
   }
 
-  void updateSet(newSet) {
+  void addNewExerciseButton() {
+    selectedExercise = null;
+    showModalBottomSheet<void>(
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+          height: 200,
+          color: ThemeColors.kLightPurple,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: DropdownButtonFormField<Exercise>(
+                    isExpanded: true,
+                    isDense: false,
+                    hint: const Text('Add an exercise'),
+                    items: exercises.map((e) {
+                      return DropdownMenuItem<Exercise>(
+                        value: e,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              e.muscle ?? '',
+                              style: const TextStyle(
+                                fontSize: 12.0,
+                                color: ThemeColors.kPurple,
+                                fontStyle: FontStyle.italic,
+                              ),
+                            ),
+                            Text(
+                              e.name,
+                              style: const TextStyle(fontSize: 16.0),
+                            )
+                          ],
+                        ),
+                      );
+                    }).toList(),
+                    onChanged: (val) => selectedExercise = val,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 16.0),
+                child: CircleAvatar(
+                  backgroundColor: ThemeColors.kLightMint,
+                  radius: 20,
+                  child: IconButton(
+                    onPressed: addNewExercise,
+                    icon: const Icon(Icons.add),
+                  ),
+                ),
+              )
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  void addNewExercise() {
+    if (selectedExercise != null) {
+      setState(() {
+        exerciseList.add(selectedExercise!);
+        Results newResult = Results(
+          date: date,
+          exerciseName: selectedExercise!.name,
+          exerciseSet: selectedSet?.name,
+        );
+        newResult.sets = 3;
+        results.add(newResult);
+      });
+      Navigator.pop(context);
+    }
+  }
+
+  void logResult(int index) {
     setState(() {
-      set = newSet;
-      if (set != null) {
-        exerciseList =
-            exercises.where((e) => set!.exercises.contains(e.name)).toList();
-        results = exerciseList
-            .map((e) => Results(
-                date: date, exerciseName: e.name, program: program!.name))
-            .toList();
-        for (int i = 0; i < set!.targetSets.length; i++) {
-          results[i].sets = set!.targetSets[i];
-        }
-      } else {
-        exerciseList = [];
-        results = [];
-      }
+      resultsBox.add(results[index]);
+      exerciseList.removeAt(index);
+      results.removeAt(index);
+    });
+  }
+
+  void removeResult(int index) {
+    setState(() {
+      exerciseList.removeAt(index);
+      results.removeAt(index);
     });
   }
 
@@ -82,31 +155,18 @@ class _LoggingPageState extends State<LoggingPage> {
 
     now = DateTime.now();
     date = DateTime(now.year, now.month, now.day);
-    programNames = programs.map((p) => p.name).toList();
 
-    if (widget.currentProgram == null) {
-      program = programs.where((p) => p.isCurrent == true).toList()[0];
-    } else {
-      program = widget.currentProgram;
-    }
+    selectedSet = widget.set;
 
-    sets = program!.exerciseSets;
-
-    if (widget.currentSet == null) {
-      set = program!.exerciseSets![0];
-    } else {
-      set = widget.currentSet;
-    }
-
-    if (set != null) {
-      exerciseList =
-          exercises.where((e) => set!.exercises.contains(e.name)).toList();
-      results = exerciseList
-          .map((e) =>
-              Results(date: date, exerciseName: e.name, program: program!.name))
+    if (selectedSet != null) {
+      exerciseList = exercises
+          .where((e) => selectedSet!.exercises.contains(e.name))
           .toList();
-      for (int i = 0; i < set!.targetSets.length; i++) {
-        results[i].sets = set!.targetSets[i];
+      results = exerciseList
+          .map((e) => Results(date: date, exerciseName: e.name))
+          .toList();
+      for (int i = 0; i < selectedSet!.targetSets.length; i++) {
+        results[i].sets = selectedSet!.targetSets[i];
       }
     }
   }
@@ -129,10 +189,10 @@ class _LoggingPageState extends State<LoggingPage> {
               icon: const Icon(Icons.add))
         ],
       ),
-      body: program == null || sets == null
+      body: widget.set == null
           ? const Center(
               child: Text(
-              'Need to add a program and sets',
+              'Need to add an exercise set',
               style: TextStyle(fontSize: 24.0),
             ))
           : Padding(
@@ -147,26 +207,10 @@ class _LoggingPageState extends State<LoggingPage> {
                       Expanded(
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: DropdownButtonFormField<Program>(
-                            value: program,
-                            hint: const Text('Select Program'),
-                            items: programs.map((p) {
-                              return DropdownMenuItem<Program>(
-                                value: p,
-                                child: Text(p.name),
-                              );
-                            }).toList(),
-                            onChanged: (val) => updateProgram(val),
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
                           child: DropdownButtonFormField<ExerciseSet>(
-                            value: set,
+                            value: selectedSet,
                             hint: const Text('Select Set'),
-                            items: sets!.map((s) {
+                            items: exerciseSets.map((s) {
                               return DropdownMenuItem<ExerciseSet>(
                                 value: s,
                                 child: Text(s.name),
@@ -206,7 +250,7 @@ class _LoggingPageState extends State<LoggingPage> {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: exerciseList.isEmpty
-                          ? const Text('No Exercise Sets')
+                          ? const Text('No Exercises in Set')
                           : ListView.builder(
                               shrinkWrap: true,
                               itemCount: exerciseList.length,
@@ -216,15 +260,8 @@ class _LoggingPageState extends State<LoggingPage> {
                                   child: ExerciseLogCard(
                                     exercise: exerciseList[index],
                                     result: results[index],
-                                    onAdd: () => setState(() {
-                                      resultsBox.add(results[index]);
-                                      exerciseList.removeAt(index);
-                                      results.removeAt(index);
-                                    }),
-                                    onRemove: () => setState(() {
-                                      exerciseList.removeAt(index);
-                                      results.removeAt(index);
-                                    }),
+                                    onAdd: () => logResult(index),
+                                    onRemove: () => removeResult(index),
                                   ),
                                 );
                               },
@@ -235,78 +272,7 @@ class _LoggingPageState extends State<LoggingPage> {
               ),
             ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          selectedExercise = null;
-          showModalBottomSheet<void>(
-            context: context,
-            builder: (BuildContext context) {
-              return Container(
-                height: 200,
-                color: ThemeColors.kLightPurple,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.all(16.0),
-                        child: DropdownButtonFormField<Exercise>(
-                          isExpanded: true,
-                          isDense: false,
-                          hint: const Text('Add an exercise'),
-                          items: exercises.map((e) {
-                            return DropdownMenuItem<Exercise>(
-                              value: e,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    e.muscle ?? '',
-                                    style: const TextStyle(
-                                      fontSize: 12.0,
-                                      color: ThemeColors.kPurple,
-                                      fontStyle: FontStyle.italic,
-                                    ),
-                                  ),
-                                  Text(
-                                    e.name,
-                                    style: const TextStyle(fontSize: 16.0),
-                                  )
-                                ],
-                              ),
-                            );
-                          }).toList(),
-                          onChanged: (val) => selectedExercise = val,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: IconButton(
-                        onPressed: () {
-                          if (selectedExercise != null) {
-                            setState(() {
-                              exerciseList.add(selectedExercise!);
-                              Results newResult = Results(
-                                  date: date,
-                                  exerciseName: selectedExercise!.name,
-                                  program: program!.name);
-                              newResult.sets = 3;
-                              results.add(newResult);
-                            });
-                            Navigator.pop(context);
-                          }
-                        },
-                        icon: const Icon(Icons.add),
-                      ),
-                    )
-                  ],
-                ),
-              );
-            },
-          );
-        },
+        onPressed: addNewExerciseButton,
         backgroundColor: ThemeColors.kMint,
         child: const Icon(Icons.add),
       ),

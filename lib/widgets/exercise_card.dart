@@ -96,18 +96,6 @@ class ExerciseCard extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(
-                            top: 0.0, left: 8.0, right: 8.0, bottom: 0.0),
-                        child: Text(
-                          getSubtext(curExer.type, curExer.level),
-                          style: const TextStyle(
-                            fontSize: 12.0,
-                            fontStyle: FontStyle.italic,
-                            color: ThemeColors.kLightPurple,
-                          ),
-                        ),
-                      ),
                     ],
                   ),
                 ),
@@ -189,18 +177,6 @@ class SimpleExerciseCard extends StatelessWidget {
                           color: ThemeColors.kPurple,
                           fontSize: 24.0,
                           fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          top: 0.0, left: 8.0, right: 8.0, bottom: 0.0),
-                      child: Text(
-                        getSubtext(curExer.type, curExer.level),
-                        style: const TextStyle(
-                          fontSize: 12.0,
-                          fontStyle: FontStyle.italic,
-                          color: ThemeColors.kLightPurple,
                         ),
                       ),
                     ),

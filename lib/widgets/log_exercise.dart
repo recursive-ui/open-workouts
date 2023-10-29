@@ -10,7 +10,6 @@ import 'package:open_workouts/widgets/dropdown_field.dart';
 class ExerciseLogCard extends StatefulWidget {
   final Exercise exercise;
   final Results result;
-  final String? programName;
   final void Function()? onRemove;
   final void Function()? onAdd;
   const ExerciseLogCard({
@@ -18,7 +17,6 @@ class ExerciseLogCard extends StatefulWidget {
     required this.exercise,
     required this.result,
     this.onRemove,
-    this.programName,
     this.onAdd,
   }) : super(key: key);
 

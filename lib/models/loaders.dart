@@ -51,37 +51,27 @@ Future<void> exportToJson() async {
   }
 }
 
-List<dynamic>? getNextExerciseSet() {
+ExerciseSet? getNextExerciseSet() {
   ExerciseSet nextSet;
-  Box<Program> programsBox = Hive.box<Program>('programs');
-  List<Program> currentPrograms =
-      programsBox.values.where((p) => p.isCurrent == true).toList();
+  List<ExerciseSet> sets = Hive.box<ExerciseSet>('sets').values.toList();
+  sets.retainWhere((e) => e.daysOfWeek.isNotEmpty);
 
-  if (currentPrograms.isEmpty) {
-    List<Program> currentPrograms = programsBox.values.toList();
-    if (currentPrograms.isEmpty) {
-      return null;
-    }
-  }
-
-  int dayOfWeek = DateTime.now().weekday;
-  Program program = currentPrograms[0];
-  List<ExerciseSet>? exerciseSets = program.exerciseSets;
-
-  if (exerciseSets == null || exerciseSets.isEmpty) {
+  if (sets.isEmpty || sets.where((e) => e.daysOfWeek.isNotEmpty).isEmpty) {
     return null;
   }
 
+  int dayOfWeek = DateTime.now().weekday;
   List<ExerciseSet>? nextSets =
-      exerciseSets.where((e) => e.dayOfWeek >= dayOfWeek).toList();
-  List<int> daysOfWeek = exerciseSets.map((e) => e.dayOfWeek).toList();
+      sets.where((e) => e.getNextExerciseDay(dayOfWeek) >= dayOfWeek).toList();
+  List<int> daysOfWeek = sets.map((e) => e.daysOfWeek.reduce(min)).toList();
 
   if (nextSets.isEmpty) {
-    nextSet = exerciseSets[daysOfWeek.indexOf(daysOfWeek.reduce(min))];
+    nextSet = sets[daysOfWeek.indexOf(daysOfWeek.reduce(min))];
   } else {
-    List<int> nextDaysOfWeek = nextSets.map((e) => e.dayOfWeek).toList();
+    List<int> nextDaysOfWeek =
+        nextSets.map((e) => e.getNextExerciseDay(dayOfWeek)).toList();
     int nextDayofWeek = nextDaysOfWeek.reduce(min);
-    nextSet = exerciseSets[daysOfWeek.indexOf(nextDayofWeek)];
+    nextSet = sets[daysOfWeek.indexOf(nextDayofWeek)];
   }
-  return [program, nextSet];
+  return nextSet;
 }

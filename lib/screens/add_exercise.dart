@@ -141,7 +141,6 @@ class _AddExerciseScreenState extends State<AddExerciseScreen> {
                           name: name!,
                           muscle: muscle,
                           type: exerciseType,
-                          level: level,
                           notes: notes,
                           imageUrl: imageURL);
 

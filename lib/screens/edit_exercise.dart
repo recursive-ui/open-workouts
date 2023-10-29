@@ -113,15 +113,6 @@ class _EditExerciseScreenState extends State<EditExerciseScreen> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
-                  initialValue: exercise != null ? exercise.level ?? '' : '',
-                  decoration:
-                      kInputDecoration.copyWith(labelText: 'Difficulty'),
-                  onSaved: (text) => level = text,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: TextFormField(
                   maxLines: null,
                   initialValue: exercise != null ? exercise.notes ?? '' : '',
                   decoration: kInputDecoration.copyWith(labelText: 'Notes'),
@@ -172,7 +163,6 @@ class _EditExerciseScreenState extends State<EditExerciseScreen> {
                               name: name!,
                               muscle: muscle,
                               type: exerciseType,
-                              level: level,
                               notes: notes,
                               imageUrl: imageURL);
 

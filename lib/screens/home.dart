@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:open_workouts/screens/exercise.dart';
 import 'package:open_workouts/screens/landing.dart';
-import 'package:open_workouts/screens/programs.dart';
+import 'package:open_workouts/screens/sets.dart';
 import 'package:open_workouts/screens/settings.dart';
 import 'package:open_workouts/utilities/constants.dart';
 import 'package:motion_tab_bar_v2/motion-tab-bar.dart';
@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage>
             controller: _tabController,
             children: const <Widget>[
               ExercisePage(),
-              ProgramsPage(),
+              ExerciseSetsPage(),
               Landingpage(),
               Center(child: Text('Results')),
               SettingsPage(),
@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage>
       ),
       bottomNavigationBar: MotionTabBar(
         initialSelectedTab: 'Home',
-        labels: const ['Exercises', 'Programs', 'Home', 'Results', 'Settings'],
+        labels: const ['Exercises', 'Sets', 'Home', 'Results', 'Settings'],
         icons: [
           MdiIcons.dumbbell,
           MdiIcons.calendarText,

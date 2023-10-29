@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:open_workouts/screens/add_program.dart';
+import 'package:open_workouts/screens/add_edit_set.dart';
 import 'package:open_workouts/screens/home.dart';
 import 'package:open_workouts/screens/settings.dart';
 import 'package:open_workouts/utilities/constants.dart';
@@ -16,10 +16,9 @@ void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter<Exercise>(ExerciseAdapter());
   Hive.registerAdapter<ExerciseSet>(ExerciseSetAdapter());
-  Hive.registerAdapter<Program>(ProgramAdapter());
   Hive.registerAdapter<Results>(ResultsAdapter());
   await Hive.openBox<Exercise>('exercises');
-  await Hive.openBox<Program>('programs');
+  await Hive.openBox<ExerciseSet>('sets');
   await Hive.openBox<Results>('results');
   await Hive.openBox('settings');
   runApp(const MyApp());
@@ -56,7 +55,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': ((context) => const HomePage()),
-        '/add_program': ((context) => const AddProgramScreen()),
+        '/add_set': ((context) => const AddSetScreen()),
         '/settings': ((context) => const SettingsPage())
       },
     );
