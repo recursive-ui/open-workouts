@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:open_workouts/models/exercises.dart';
@@ -74,11 +75,12 @@ class ExerciseSetCard extends StatelessWidget {
                       shrinkWrap: true,
                       itemCount: set.exercises.length,
                       itemBuilder: (context, index) {
-                        List<Exercise> matchingExer = exerciseBox.values
-                            .where((e) => e.name == set.exercises[index])
-                            .toList();
-                        Exercise curExercise = matchingExer[0];
-                        return SimpleExerciseCard(curExer: curExercise);
+                        Exercise? curExercise = exerciseBox.values
+                            .firstWhereOrNull(
+                                (e) => e.name == set.exercises[index]);
+                        return curExercise == null
+                            ? Container()
+                            : SimpleExerciseCard(curExer: curExercise);
                       },
                     ),
               const SizedBox(height: 12.0)

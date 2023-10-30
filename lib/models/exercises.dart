@@ -1,4 +1,7 @@
+import 'dart:math';
+
 import 'package:hive/hive.dart';
+import 'package:open_workouts/utilities/maths.dart';
 
 part 'exercises.g.dart';
 
@@ -71,6 +74,20 @@ class Results extends HiveObject {
     } else {
       reps = List<int>.filled(newSets, 0);
     }
+  }
+
+  double percentImprovement(Results previous) {
+    double repsDiff = 0;
+    if (reps != null && previous.reps != null) {
+      if (reps!.isNotEmpty && previous.reps!.isNotEmpty) {
+        repsDiff = percentDiff(median(reps!), median(previous.reps!));
+      }
+    }
+    double measureDiff = 0;
+    if (measure != null && previous.measure != null) {
+      measureDiff = (measure! - previous.measure!) / previous.measure!;
+    }
+    return max(repsDiff, measureDiff);
   }
 
   Results.fromMap(Map<String, dynamic> map)

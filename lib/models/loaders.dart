@@ -60,6 +60,10 @@ ExerciseSet? getNextExerciseSet() {
     return null;
   }
 
+  if (sets.length == 1) {
+    return sets.first;
+  }
+
   int dayOfWeek = DateTime.now().weekday;
   List<ExerciseSet>? nextSets =
       sets.where((e) => e.getNextExerciseDay(dayOfWeek) >= dayOfWeek).toList();

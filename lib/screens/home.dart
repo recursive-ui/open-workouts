@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:open_workouts/screens/exercise.dart';
 import 'package:open_workouts/screens/landing.dart';
+import 'package:open_workouts/screens/results.dart';
 import 'package:open_workouts/screens/sets.dart';
 import 'package:open_workouts/screens/settings.dart';
 import 'package:open_workouts/utilities/constants.dart';
@@ -48,7 +49,7 @@ class _HomePageState extends State<HomePage>
               ExercisePage(),
               ExerciseSetsPage(),
               Landingpage(),
-              Center(child: Text('Results')),
+              ResultsScreen(),
               SettingsPage(),
             ],
           ),

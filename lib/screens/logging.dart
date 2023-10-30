@@ -149,6 +149,18 @@ class _LoggingPageState extends State<LoggingPage> {
     });
   }
 
+  void updateDate(DateTime newDate) {
+    List<Results> newResults = [];
+    for (Results result in results) {
+      result.date = newDate;
+      newResults.add(result);
+    }
+    setState(() {
+      date = newDate;
+      results = newResults;
+    });
+  }
+
   @override
   void initState() {
     super.initState();
@@ -163,7 +175,8 @@ class _LoggingPageState extends State<LoggingPage> {
           .where((e) => selectedSet!.exercises.contains(e.name))
           .toList();
       results = exerciseList
-          .map((e) => Results(date: date, exerciseName: e.name))
+          .map((e) => Results(
+              date: date, exerciseName: e.name, exerciseSet: selectedSet?.name))
           .toList();
       for (int i = 0; i < selectedSet!.targetSets.length; i++) {
         results[i].sets = selectedSet!.targetSets[i];
@@ -229,7 +242,7 @@ class _LoggingPageState extends State<LoggingPage> {
                             lastDate: DateTime(2050),
                           );
                           if (picked != null && picked != date) {
-                            setState(() => date = picked);
+                            updateDate(picked);
                           }
                         },
                         child: CircleAvatar(

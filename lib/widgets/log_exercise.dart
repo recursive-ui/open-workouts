@@ -45,19 +45,25 @@ class _ExerciseLogCardState extends State<ExerciseLogCard> {
     );
   }
 
+  void updateUnits(String? val) {
+    if (val != '') {
+      widget.result.units = val;
+    }
+  }
+
   @override
   void initState() {
     super.initState();
 
-    List<Results> allResults = resultsBox.values.toList();
-    List<Results> latestResults = allResults
+    List<Results> latestResults = resultsBox.values
         .where((r) => r.exerciseName == widget.result.exerciseName)
         .toList();
 
     if (latestResults.isNotEmpty) {
       latestResults.sort((a, b) => a.date.compareTo(b.date));
       Results latestResult = latestResults[latestResults.length - 1];
-      widget.result.reps = latestResult.reps;
+      widget.result.reps =
+          latestResult.reps == null ? null : List<int>.from(latestResult.reps!);
       widget.result.measure = latestResult.measure;
       widget.result.units = latestResult.units;
       widget.result.notes = latestResult.notes;
@@ -198,7 +204,7 @@ class _ExerciseLogCardState extends State<ExerciseLogCard> {
                       initialValue: widget.result.units,
                       items: commonUnits,
                       decoration: const InputDecoration(labelText: 'Units'),
-                      onChanged: (val) => widget.result.units = val,
+                      onChanged: updateUnits,
                     ),
                   ),
                 )
