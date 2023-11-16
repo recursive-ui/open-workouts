@@ -37,7 +37,7 @@ const List<String> exerciseTypes = [
 ];
 
 Future<bool?> showAddExercise(BuildContext context) {
-  final _formKey = GlobalKey<FormState>();
+  final formKey = GlobalKey<FormState>();
   String? name;
   String? muscle;
   String? exerciseType;
@@ -63,7 +63,7 @@ Future<bool?> showAddExercise(BuildContext context) {
             ),
           ),
           child: Form(
-            key: _formKey,
+            key: formKey,
             child: Padding(
               padding: const EdgeInsets.all(20.0),
               child: Column(
@@ -128,8 +128,8 @@ Future<bool?> showAddExercise(BuildContext context) {
                       backgroundColor: ThemeColors.kMint,
                       overlayColor: ThemeColors.kLightMint,
                       onPressed: () {
-                        if (_formKey.currentState!.validate()) {
-                          _formKey.currentState!.save();
+                        if (formKey.currentState!.validate()) {
+                          formKey.currentState!.save();
                           Exercise newExercise = Exercise(
                               name: name!,
                               muscle: muscle,
@@ -139,7 +139,7 @@ Future<bool?> showAddExercise(BuildContext context) {
 
                           Box<Exercise> exerciseBox =
                               Hive.box<Exercise>('exercises');
-                          exerciseBox.add(newExercise);
+                          exerciseBox.put(newExercise.name, newExercise);
                           Navigator.pop(context);
                         }
                       },

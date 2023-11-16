@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class DropdownField extends StatefulWidget {
-  DropdownField({
+  const DropdownField({
     Key? key,
     required this.items,
     this.decoration,

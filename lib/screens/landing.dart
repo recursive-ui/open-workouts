@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:open_workouts/models/exercises.dart';
 import 'package:open_workouts/models/loaders.dart';
 import 'package:open_workouts/screens/logging.dart';
@@ -12,6 +13,7 @@ class Landingpage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ExerciseSet? nextExerciseSet = getNextExerciseSet();
+    bool hasCurrentResults = Hive.box<Results>('currentResults').isNotEmpty;
 
     return Padding(
       padding: const EdgeInsets.all(20.0),
@@ -49,7 +51,7 @@ class Landingpage extends StatelessWidget {
             ),
           ),
           RoundedButton(
-            text: 'Log Exercise',
+            text: hasCurrentResults ? 'Continue Logging' : 'Log Exercise',
             backgroundColor: ThemeColors.kPink,
             overlayColor: ThemeColors.kLightPink,
             onPressed: () => Navigator.push(

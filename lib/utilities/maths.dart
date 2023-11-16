@@ -10,3 +10,15 @@ double median(List a) {
     return (a[middle - 1] + a[middle]) / 2.0;
   }
 }
+
+double mean(List<num> numbers) {
+  if (numbers.isEmpty) {
+    return 0;
+  }
+  double sum = 0;
+  for (num n in numbers) {
+    sum += n.toDouble();
+  }
+
+  return sum / numbers.length;
+}

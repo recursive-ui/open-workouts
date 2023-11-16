@@ -220,7 +220,13 @@ class _AddSetScreenState extends State<AddSetScreen> {
                         text: 'New Exercise',
                         backgroundColor: ThemeColors.kPink,
                         overlayColor: ThemeColors.kLightPink,
-                        onPressed: () => showAddExercise(context),
+                        onPressed: () {
+                          showAddExercise(context);
+                          setState(() {
+                            allExercies =
+                                Hive.box<Exercise>('exercises').values.toList();
+                          });
+                        },
                       ),
                     ),
                   ),

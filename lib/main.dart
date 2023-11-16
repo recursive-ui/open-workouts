@@ -21,6 +21,7 @@ void main() async {
   await Hive.openBox<ExerciseSet>('sets');
   await Hive.openBox<Results>('results');
   await Hive.openBox('settings');
+  await Hive.openBox<Results>('currentResults');
   runApp(const MyApp());
 }
 

@@ -8,16 +8,18 @@ import 'package:number_selection/number_selection.dart';
 import 'package:open_workouts/widgets/dropdown_field.dart';
 
 class ExerciseLogCard extends StatefulWidget {
-  final Exercise exercise;
-  final Results result;
+  final String exerciseName;
+  final bool updateFromLast;
   final void Function()? onRemove;
   final void Function()? onAdd;
+  final void Function()? onUpdated;
   const ExerciseLogCard({
     Key? key,
-    required this.exercise,
-    required this.result,
+    required this.exerciseName,
+    this.updateFromLast = false,
     this.onRemove,
     this.onAdd,
+    this.onUpdated,
   }) : super(key: key);
 
   @override
@@ -26,13 +28,15 @@ class ExerciseLogCard extends StatefulWidget {
 
 class _ExerciseLogCardState extends State<ExerciseLogCard> {
   final Box<Results> resultsBox = Hive.box<Results>('results');
+  final Box<Results> curResultsBox = Hive.box<Results>('currentResults');
+  late Exercise? exercise;
+  late Results? result;
 
   Widget getExerciseImage() {
-    if (widget.exercise.imageUrl != null &&
-        widget.exercise.imageUrl != '' &&
-        widget.exercise.imageUrl!.endsWith('.gif')) {
-      return Image(
-          image: CachedNetworkImageProvider(widget.exercise.imageUrl!));
+    if (exercise != null &&
+        exercise?.imageUrl != null &&
+        exercise?.imageUrl != '') {
+      return Image(image: CachedNetworkImageProvider(exercise!.imageUrl!));
     }
     return const Padding(
       padding: EdgeInsets.only(
@@ -47,7 +51,10 @@ class _ExerciseLogCardState extends State<ExerciseLogCard> {
 
   void updateUnits(String? val) {
     if (val != '') {
-      widget.result.units = val;
+      result?.units = val;
+      if (widget.onUpdated != null) {
+        widget.onUpdated!();
+      }
     }
   }
 
@@ -55,23 +62,32 @@ class _ExerciseLogCardState extends State<ExerciseLogCard> {
   void initState() {
     super.initState();
 
-    List<Results> latestResults = resultsBox.values
-        .where((r) => r.exerciseName == widget.result.exerciseName)
-        .toList();
+    exercise = Hive.box<Exercise>('exercises').get(widget.exerciseName);
+    result = curResultsBox.get(widget.exerciseName);
 
-    if (latestResults.isNotEmpty) {
-      latestResults.sort((a, b) => a.date.compareTo(b.date));
-      Results latestResult = latestResults[latestResults.length - 1];
-      widget.result.reps =
-          latestResult.reps == null ? null : List<int>.from(latestResult.reps!);
-      widget.result.measure = latestResult.measure;
-      widget.result.units = latestResult.units;
-      widget.result.notes = latestResult.notes;
+    if (result != null && widget.updateFromLast) {
+      List<Results> latestResults = resultsBox.values
+          .where((r) => r.exerciseName == result?.exerciseName)
+          .toList();
+
+      if (latestResults.isNotEmpty) {
+        latestResults.sort((a, b) => a.date.compareTo(b.date));
+        Results latestResult = latestResults[latestResults.length - 1];
+        result?.reps = latestResult.reps == null
+            ? null
+            : List<int>.from(latestResult.reps!);
+        result?.measure = latestResult.measure;
+        result?.units = latestResult.units;
+        result?.notes = latestResult.notes;
+      }
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    if (result == null) {
+      return Container();
+    }
     return Card(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -90,12 +106,14 @@ class _ExerciseLogCardState extends State<ExerciseLogCard> {
                   onPressed: widget.onAdd,
                   icon: const Icon(Icons.add),
                 ),
-                Text(
-                  widget.exercise.name,
-                  style: const TextStyle(
-                    color: ThemeColors.kPurple,
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.w900,
+                Flexible(
+                  child: Text(
+                    exercise?.name ?? '',
+                    style: const TextStyle(
+                      color: ThemeColors.kPurple,
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.w900,
+                    ),
                   ),
                 ),
                 IconButton(
@@ -127,13 +145,17 @@ class _ExerciseLogCardState extends State<ExerciseLogCard> {
                           numberColor: Colors.white,
                           backgroundColor: ThemeColors.kPurple,
                           outOfConstraintsColor: Colors.deepOrange),
-                      initialValue: widget.result.sets,
+                      initialValue: result?.sets,
                       minValue: 0,
                       maxValue: 20,
                       direction: Axis.horizontal,
                       withSpring: false,
-                      onChanged: (int value) =>
-                          setState(() => widget.result.sets = value),
+                      onChanged: (int value) {
+                        if (widget.onUpdated != null) {
+                          setState(() => result?.sets = value);
+                          widget.onUpdated!();
+                        }
+                      },
                       enableOnOutOfConstraintsAnimation: true,
                     ),
                   ),
@@ -146,7 +168,7 @@ class _ExerciseLogCardState extends State<ExerciseLogCard> {
             child: ListView(
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
-              children: List<Widget>.generate(widget.result.sets, (index) {
+              children: List<Widget>.generate(result!.sets, (index) {
                 return Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: NumberSelection(
@@ -156,13 +178,17 @@ class _ExerciseLogCardState extends State<ExerciseLogCard> {
                         numberColor: Colors.white,
                         backgroundColor: ThemeColors.kPurple,
                         outOfConstraintsColor: Colors.deepOrange),
-                    initialValue: widget.result.reps![index],
+                    initialValue: result?.reps![index],
                     minValue: 0,
                     maxValue: 100,
                     direction: Axis.vertical,
                     withSpring: false,
-                    onChanged: (int value) =>
-                        widget.result.reps![index] = value,
+                    onChanged: (int value) {
+                      result?.reps![index] = value;
+                      if (widget.onUpdated != null) {
+                        widget.onUpdated!();
+                      }
+                    },
                     enableOnOutOfConstraintsAnimation: true,
                   ),
                 );
@@ -178,9 +204,9 @@ class _ExerciseLogCardState extends State<ExerciseLogCard> {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
-                      initialValue: widget.result.measure == null
+                      initialValue: result?.measure == null
                           ? ''
-                          : widget.result.measure.toString(),
+                          : result?.measure.toString(),
                       keyboardType:
                           const TextInputType.numberWithOptions(decimal: true),
                       inputFormatters: [
@@ -190,7 +216,10 @@ class _ExerciseLogCardState extends State<ExerciseLogCard> {
                           labelText: 'Measurement e.g. weight'),
                       onChanged: (measure) {
                         if (measure != '') {
-                          widget.result.measure = double.parse(measure);
+                          result?.measure = double.parse(measure);
+                          if (widget.onUpdated != null) {
+                            widget.onUpdated!();
+                          }
                         }
                       },
                     ),
@@ -201,7 +230,7 @@ class _ExerciseLogCardState extends State<ExerciseLogCard> {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: DropdownField(
-                      initialValue: widget.result.units,
+                      initialValue: result?.units,
                       items: commonUnits,
                       decoration: const InputDecoration(labelText: 'Units'),
                       onChanged: updateUnits,
@@ -214,11 +243,14 @@ class _ExerciseLogCardState extends State<ExerciseLogCard> {
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: TextFormField(
-              initialValue: widget.result.notes,
+              initialValue: result?.notes,
               decoration: const InputDecoration(labelText: 'Notes'),
               onChanged: (notes) {
                 if (notes != '') {
-                  widget.result.notes = notes;
+                  result?.notes = notes;
+                  if (widget.onUpdated != null) {
+                    widget.onUpdated!();
+                  }
                 }
               },
             ),

@@ -5,37 +5,6 @@ import 'package:open_workouts/utilities/constants.dart';
 import 'package:open_workouts/widgets/dropdown_field.dart';
 import 'package:open_workouts/widgets/rounded_button.dart';
 
-const List<String> muscles = [
-  'Abs',
-  'Back',
-  'Biceps',
-  'Calves',
-  'Chest',
-  'Glutes',
-  'Hamstrings & Glutes',
-  'Quads & Glutes',
-  'Shoulders',
-  'Triceps'
-];
-
-const List<String> exerciseTypes = [
-  'Close-grip Press',
-  'Core',
-  'Curl',
-  'Facepull variation',
-  'Horizontal Press',
-  'Horizontal pull',
-  'Horizontal Push',
-  'Incline Press',
-  'Isolation',
-  'Lift',
-  'Quad compound',
-  'Raises',
-  'Side delt isolation',
-  'Vertical press',
-  'Vertical pull',
-];
-
 class AddExerciseScreen extends StatefulWidget {
   const AddExerciseScreen({Key? key}) : super(key: key);
 
@@ -97,14 +66,6 @@ class _AddExerciseScreenState extends State<AddExerciseScreen> {
                   items: exerciseTypes,
                   decoration: kInputDecoration.copyWith(labelText: 'Type'),
                   onSaved: (text) => exerciseType = text,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: TextFormField(
-                  decoration:
-                      kInputDecoration.copyWith(labelText: 'Difficulty'),
-                  onSaved: (text) => level = text,
                 ),
               ),
               Padding(

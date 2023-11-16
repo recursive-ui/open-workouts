@@ -19,39 +19,38 @@ class LoggingPage extends StatefulWidget {
 class _LoggingPageState extends State<LoggingPage> {
   final List<ExerciseSet> exerciseSets =
       Hive.box<ExerciseSet>('sets').values.toList();
+  final Box<Results> resultsBox = Hive.box<Results>('results');
+  final Box<Results> curResultsBox = Hive.box<Results>('currentResults');
+  final DateFormat formatter = DateFormat('dd-MM');
   final List<Exercise> exercises =
       Hive.box<Exercise>('exercises').values.toList();
-  final Box<Results> resultsBox = Hive.box<Results>('results');
-  final DateFormat formatter = DateFormat('dd-MM');
   ExerciseSet? selectedSet;
   Exercise? selectedExercise;
-  List<Exercise> exerciseList = [];
-  List<Results> results = [];
   late DateTime now;
   late DateTime date = DateTime.now();
+  bool modifiedResults = false;
+  List<String> resultsNames = [];
 
-  void updateSet(newSet) {
-    setState(() {
-      selectedSet = newSet;
-      if (selectedSet != null) {
-        exerciseList = exercises
-            .where((e) => selectedSet!.exercises.contains(e.name))
-            .toList();
-        results = exerciseList
-            .map((e) => Results(
-                  date: date,
-                  exerciseName: e.name,
-                  exerciseSet: selectedSet?.name,
-                ))
-            .toList();
-        for (int i = 0; i < selectedSet!.targetSets.length; i++) {
-          results[i].sets = selectedSet!.targetSets[i];
-        }
-      } else {
-        exerciseList = [];
-        results = [];
-      }
-    });
+  void updateSet(ExerciseSet? newSet) async {
+    if (newSet != null) {
+      Map<dynamic, Results> newResults = {
+        for (String name in newSet.exercises)
+          name: Results(
+            date: date,
+            exerciseName: name,
+            exerciseSet: newSet.name,
+          ),
+      };
+
+      await curResultsBox.clear();
+      await curResultsBox.putAll(newResults);
+
+      setState(() {
+        modifiedResults = false;
+        selectedSet = newSet;
+        resultsNames = List<String>.from(curResultsBox.keys);
+      });
+    }
   }
 
   void addNewExerciseButton() {
@@ -120,44 +119,49 @@ class _LoggingPageState extends State<LoggingPage> {
 
   void addNewExercise() {
     if (selectedExercise != null) {
+      Results newResult = Results(
+        date: date,
+        exerciseName: selectedExercise!.name,
+        exerciseSet: selectedSet?.name,
+      );
+      newResult.sets = 3;
+      curResultsBox.put(selectedExercise!.name, newResult);
       setState(() {
-        exerciseList.add(selectedExercise!);
-        Results newResult = Results(
-          date: date,
-          exerciseName: selectedExercise!.name,
-          exerciseSet: selectedSet?.name,
-        );
-        newResult.sets = 3;
-        results.add(newResult);
+        resultsNames = List<String>.from(curResultsBox.keys);
       });
       Navigator.pop(context);
     }
   }
 
-  void logResult(int index) {
+  void logResult(String exerciseName) {
+    Results? resultToAdd = curResultsBox.get(exerciseName);
+    if (resultToAdd != null) {
+      resultsBox.add(resultToAdd);
+      curResultsBox.delete(exerciseName);
+    }
     setState(() {
-      resultsBox.add(results[index]);
-      exerciseList.removeAt(index);
-      results.removeAt(index);
+      resultsNames = List<String>.from(curResultsBox.keys);
     });
   }
 
-  void removeResult(int index) {
+  void removeResult(String exerciseName) {
+    curResultsBox.delete(exerciseName);
     setState(() {
-      exerciseList.removeAt(index);
-      results.removeAt(index);
+      resultsNames = List<String>.from(curResultsBox.keys);
     });
   }
 
   void updateDate(DateTime newDate) {
-    List<Results> newResults = [];
-    for (Results result in results) {
-      result.date = newDate;
-      newResults.add(result);
+    Map<String, Results> newResults =
+        Map<String, Results>.from(curResultsBox.toMap());
+    for (Results result in newResults.values) {
+      result.date = date;
     }
+
+    curResultsBox.clear();
+    curResultsBox.putAll(newResults);
     setState(() {
-      date = newDate;
-      results = newResults;
+      resultsNames = List<String>.from(curResultsBox.keys);
     });
   }
 
@@ -168,19 +172,32 @@ class _LoggingPageState extends State<LoggingPage> {
     now = DateTime.now();
     date = DateTime(now.year, now.month, now.day);
 
-    selectedSet = widget.set;
+    selectedSet ??= widget.set;
+    Map<String, Results> results =
+        Map<String, Results>.from(curResultsBox.toMap());
 
-    if (selectedSet != null) {
-      exerciseList = exercises
-          .where((e) => selectedSet!.exercises.contains(e.name))
-          .toList();
-      results = exerciseList
-          .map((e) => Results(
-              date: date, exerciseName: e.name, exerciseSet: selectedSet?.name))
-          .toList();
-      for (int i = 0; i < selectedSet!.targetSets.length; i++) {
-        results[i].sets = selectedSet!.targetSets[i];
+    if (results.isEmpty && selectedSet != null) {
+      for (String name in selectedSet!.exercises) {
+        curResultsBox.put(
+          name,
+          Results(
+            date: date,
+            exerciseName: name,
+            exerciseSet: selectedSet?.name,
+          ),
+        );
       }
+    } else {
+      modifiedResults = true;
+    }
+    resultsNames = List<String>.from(curResultsBox.keys);
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    if (!modifiedResults) {
+      curResultsBox.clear();
     }
   }
 
@@ -192,11 +209,12 @@ class _LoggingPageState extends State<LoggingPage> {
         actions: [
           IconButton(
               onPressed: () {
-                for (Results res in results) {
+                for (Results res in curResultsBox.values) {
                   if (res.reps!.any((e) => e > 0)) {
                     resultsBox.add(res);
                   }
                 }
+                curResultsBox.clear();
                 Navigator.pop(context);
               },
               icon: const Icon(Icons.add))
@@ -229,7 +247,7 @@ class _LoggingPageState extends State<LoggingPage> {
                                 child: Text(s.name),
                               );
                             }).toList(),
-                            onChanged: (val) => updateSet(val),
+                            onChanged: (ExerciseSet? val) => updateSet(val),
                           ),
                         ),
                       ),
@@ -262,23 +280,25 @@ class _LoggingPageState extends State<LoggingPage> {
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: exerciseList.isEmpty
-                          ? const Text('No Exercises in Set')
-                          : ListView.builder(
-                              shrinkWrap: true,
-                              itemCount: exerciseList.length,
-                              itemBuilder: (context, index) {
-                                return Padding(
-                                  padding: const EdgeInsets.all(4.0),
-                                  child: ExerciseLogCard(
-                                    exercise: exerciseList[index],
-                                    result: results[index],
-                                    onAdd: () => logResult(index),
-                                    onRemove: () => removeResult(index),
-                                  ),
-                                );
-                              },
+                      child: ListView.builder(
+                        shrinkWrap: true,
+                        itemCount: resultsNames.length,
+                        itemBuilder: (context, index) {
+                          return Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: ExerciseLogCard(
+                              key: Key(resultsNames[index] +
+                                  date.toString() +
+                                  selectedSet!.name),
+                              exerciseName: resultsNames[index],
+                              updateFromLast: !modifiedResults,
+                              onAdd: () => logResult(resultsNames[index]),
+                              onRemove: () => removeResult(resultsNames[index]),
+                              onUpdated: () => modifiedResults = true,
                             ),
+                          );
+                        },
+                      ),
                     ),
                   ),
                 ],

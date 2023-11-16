@@ -8,6 +8,12 @@ import 'package:open_workouts/models/exercises.dart';
 import 'package:open_workouts/utilities/constants.dart';
 import 'package:open_workouts/utilities/maths.dart';
 
+const List<Widget> chartTypes = <Widget>[
+  Text('% Improvement'),
+  Text('# Reps'),
+  Text('Measure')
+];
+
 class ResultsScreen extends StatefulWidget {
   const ResultsScreen({super.key});
 
@@ -25,6 +31,7 @@ class _ResultsScreenState extends State<ResultsScreen> {
   Box<Results> resultsBox = Hive.box<Results>('results');
   late List<Results> results;
   late List<Results> allResults;
+  final List<bool> _selectedChartType = <bool>[true, false, false];
 
   List<DropdownMenuItem<String>> getExerciseSets() {
     return sets.map<DropdownMenuItem<String>>((ExerciseSet value) {
@@ -54,14 +61,32 @@ class _ResultsScreenState extends State<ResultsScreen> {
     resultDates.sort();
     resultDates = resultDates.reversed.toList();
     List<FlSpot> spots = [];
-    for (int i = 0; i < resultDates.length - 1; i++) {
-      Results curResult =
-          setResults.firstWhere((e) => e.date == resultDates[i]);
-      Results? prevResult =
-          setResults.firstWhere((e) => e.date == resultDates[i + 1]);
-      spots.add(FlSpot(resultDates[i].microsecondsSinceEpoch.toDouble(),
-          curResult.percentImprovement(prevResult) * 100));
+
+    if (_selectedChartType[0] == true) {
+      for (int i = 0; i < resultDates.length - 1; i++) {
+        Results curResult =
+            setResults.firstWhere((e) => e.date == resultDates[i]);
+        Results? prevResult =
+            setResults.firstWhere((e) => e.date == resultDates[i + 1]);
+        spots.add(FlSpot(resultDates[i].microsecondsSinceEpoch.toDouble(),
+            curResult.percentImprovement(prevResult) * 100));
+      }
+    } else if (_selectedChartType[1] == true) {
+      for (int i = 0; i < resultDates.length; i++) {
+        Results curResult =
+            setResults.firstWhere((e) => e.date == resultDates[i]);
+        spots.add(FlSpot(resultDates[i].microsecondsSinceEpoch.toDouble(),
+            mean(curResult.reps ?? [0])));
+      }
+    } else {
+      for (int i = 0; i < resultDates.length; i++) {
+        Results curResult =
+            setResults.firstWhere((e) => e.date == resultDates[i]);
+        spots.add(FlSpot(resultDates[i].microsecondsSinceEpoch.toDouble(),
+            curResult.measure ?? 0));
+      }
     }
+
     return spots;
   }
 
@@ -82,17 +107,17 @@ class _ResultsScreenState extends State<ResultsScreen> {
           .toList();
       List<double> values = [];
       for (String exer in exercises) {
-        Results curResult = setResults.firstWhere(
+        Results? curResult = setResults.firstWhereOrNull(
             (e) => e.date == resultDates[i] && e.exerciseName == exer);
         Results? prevResult = setResults.firstWhereOrNull(
             (e) => e.date == resultDates[i + 1] && e.exerciseName == exer);
-        if (prevResult != null) {
+        if (prevResult != null && curResult != null) {
           values.add(curResult.percentImprovement(prevResult));
         }
       }
       if (values.length > 1) {
         spots.add(FlSpot(resultDates[i].microsecondsSinceEpoch.toDouble(),
-            median(values) * 100));
+            mean(values) * 100));
       }
     }
     return spots;
@@ -134,6 +159,15 @@ class _ResultsScreenState extends State<ResultsScreen> {
     return getFormattedChart(chartData);
   }
 
+  String getChartTitle() {
+    if (_selectedChartType[0] == true) {
+      return '% Improvement';
+    } else if (_selectedChartType[1] == true) {
+      return '# Reps';
+    }
+    return 'Measure';
+  }
+
   Widget getFormattedChart(List<FlSpot> chartData) {
     return LineChart(
       LineChartData(
@@ -156,9 +190,10 @@ class _ResultsScreenState extends State<ResultsScreen> {
           topTitles:
               const AxisTitles(sideTitles: SideTitles(showTitles: false)),
           leftTitles: AxisTitles(
-            axisNameWidget: const Text(
-              '% Improvement',
-              style: TextStyle(fontSize: 16, color: ThemeColors.kLightPurple),
+            axisNameWidget: Text(
+              getChartTitle(),
+              style: const TextStyle(
+                  fontSize: 16, color: ThemeColors.kLightPurple),
             ),
             sideTitles: SideTitles(
               reservedSize: 32,
@@ -185,7 +220,7 @@ class _ResultsScreenState extends State<ResultsScreen> {
         ),
         lineBarsData: [
           LineChartBarData(
-            isCurved: true,
+            isCurved: false,
             color: ThemeColors.kPurple,
             barWidth: 4,
             spots: chartData,
@@ -248,29 +283,32 @@ class _ResultsScreenState extends State<ResultsScreen> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const Text('Select Exercise Set'),
-              const SizedBox(width: 16),
-              DropdownButton<String>(
-                value: selectedSet,
-                icon: const Icon(Icons.arrow_downward),
-                elevation: 16,
-                style: const TextStyle(color: Colors.deepPurple),
-                underline: Container(
-                  height: 2,
-                  color: Colors.deepPurpleAccent,
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const Text('Select Exercise Set'),
+                const SizedBox(width: 16),
+                DropdownButton<String>(
+                  value: selectedSet,
+                  icon: const Icon(Icons.arrow_downward),
+                  elevation: 16,
+                  style: const TextStyle(color: Colors.deepPurple),
+                  underline: Container(
+                    height: 2,
+                    color: Colors.deepPurpleAccent,
+                  ),
+                  onChanged: (String? value) {
+                    setState(() {
+                      selectedSet = value!;
+                    });
+                  },
+                  items: getExerciseSets(),
                 ),
-                onChanged: (String? value) {
-                  setState(() {
-                    selectedSet = value!;
-                  });
-                },
-                items: getExerciseSets(),
-              ),
-            ],
+              ],
+            ),
           ),
           const SizedBox(height: 16),
           SizedBox(
@@ -278,30 +316,54 @@ class _ResultsScreenState extends State<ResultsScreen> {
             height: MediaQuery.of(context).size.height * 0.3,
             child: getExerciseSetChart(),
           ),
+          const SizedBox(height: 32),
+          ToggleButtons(
+            onPressed: (int index) {
+              setState(() {
+                for (int i = 0; i < _selectedChartType.length; i++) {
+                  _selectedChartType[i] = i == index;
+                }
+              });
+            },
+            borderRadius: const BorderRadius.all(Radius.circular(8)),
+            selectedBorderColor: ThemeColors.kPurple,
+            selectedColor: Colors.white,
+            fillColor: ThemeColors.kLightPurple,
+            color: ThemeColors.kPurple,
+            constraints: const BoxConstraints(
+              minHeight: 40.0,
+              minWidth: 80.0,
+            ),
+            isSelected: _selectedChartType,
+            children: chartTypes,
+          ),
           const SizedBox(height: 16),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const Text('Select Exercise'),
-              const SizedBox(width: 16),
-              DropdownButton<String>(
-                value: selectedExercise,
-                icon: const Icon(Icons.arrow_downward),
-                elevation: 16,
-                style: const TextStyle(color: Colors.deepPurple),
-                underline: Container(
-                  height: 2,
-                  color: Colors.deepPurpleAccent,
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const Text('Select Exercise'),
+                const SizedBox(width: 16),
+                DropdownButton<String>(
+                  value: selectedExercise,
+                  icon: const Icon(Icons.arrow_downward),
+                  elevation: 16,
+                  style: const TextStyle(color: Colors.deepPurple),
+                  underline: Container(
+                    height: 2,
+                    color: Colors.deepPurpleAccent,
+                  ),
+                  onChanged: (String? value) {
+                    setState(() {
+                      selectedExercise = value!;
+                    });
+                  },
+                  items: getExercises(),
                 ),
-                onChanged: (String? value) {
-                  setState(() {
-                    selectedExercise = value!;
-                  });
-                },
-                items: getExercises(),
-              ),
-            ],
+              ],
+            ),
           ),
           const SizedBox(height: 16),
           SizedBox(

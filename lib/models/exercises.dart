@@ -32,10 +32,10 @@ class Exercise extends HiveObject {
 
   Map<String, dynamic> toMap() => {
         'name': name,
-        if (muscle != null) 'muscle': muscle!,
-        if (type != null) 'muscleGroup': type!,
-        if (imageUrl != null) 'imageUrl': imageUrl!,
-        if (notes != null) 'lastName': notes!,
+        'muscle': muscle ?? '',
+        'type': type ?? '',
+        'imageUrl': imageUrl ?? '',
+        'notes': notes ?? '',
       };
 }
 
@@ -80,7 +80,7 @@ class Results extends HiveObject {
     double repsDiff = 0;
     if (reps != null && previous.reps != null) {
       if (reps!.isNotEmpty && previous.reps!.isNotEmpty) {
-        repsDiff = percentDiff(median(reps!), median(previous.reps!));
+        repsDiff = percentDiff(mean(reps!), mean(previous.reps!));
       }
     }
     double measureDiff = 0;
@@ -102,11 +102,11 @@ class Results extends HiveObject {
   Map<String, dynamic> toMap() => {
         'date': date,
         'exerciseName': exerciseName,
-        if (reps != null) 'reps': reps,
-        if (measure != null) 'measure': measure,
-        if (units != null) 'units': units,
-        if (notes != null) 'notes': notes,
-        if (exerciseSet != null) 'excerciseSet': exerciseSet,
+        'reps': reps,
+        'measure': measure,
+        'units': units ?? '',
+        'notes': notes ?? '',
+        'excerciseSet': exerciseSet ?? '',
       };
 }
 
@@ -185,7 +185,8 @@ class ExerciseSet extends HiveObject {
   ExerciseSet.fromMap(Map<String, dynamic> map)
       : name = map['name'],
         daysOfWeek = map['daysOfWeek'],
-        exercises = map['exercises'];
+        exercises = map['exercises'],
+        targetSets = map['targetSets'];
 
   Map<String, dynamic> toMap() => {
         'name': name,

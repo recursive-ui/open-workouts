@@ -1,590 +1,639 @@
 [
-  {
-    "name": "Air squat",
-    "muscle": "Quads & Glutes",
-    "type": "Quad compound",
-    "imageUrl": "https://media1.giphy.com/media/13v55Ya4uWsXS/giphy.gif",
-    "notes": "If you're using it as a starting exercise, just follow the instructions in the video and\ndisregard the following. If you're using it as a light variation, for a super-set or as a\nfinisher, follow these tips: maintain a completely vertical torso by elevating your arms\nforward during the descend and achieve a full stretch in the quads to the point where\nthe calves and hamstrings are pressing against each other, stand on tiptoe if necessary\nto achieve that (what? sacrilege! Yeah with a loaded barbell on you back or if you're\nvery weak maybe, here it's not a problem). Begin by isometrically contracting the\nquads hard, then slow tempo down, pause, explode up, lock the knees, don't pause,\ndon't release the strong quad contraction from the beginning, come back down; it will\nburn. You can load some extra weight in a backpack, or holding onto something with\nyour hands (making it a goblet squat)."
-  },
-  {
-    "name": "Archer pull-ups",
-    "muscle": "Back",
-    "type": "Vertical pull",
-    "imageUrl": "https://i.imgur.com/O8mmY38.gif",
-    "notes": "Notice the pause at the bottom, you don't swing from one side to the other."
-  },
-  {
-    "name": "Archer push-ups",
-    "muscle": "Chest",
-    "type": "Horizontal Press",
-    "imageUrl": "https://i.imgur.com/bzQMhNJ.gif",
-    "notes": "The weight you're moving here is roughly equivalent to a bench press loaded with\n82% of your body weight. Notice the feet separation. What you're doing here is\nessentially a one arm push-up, but using the arm you keep straight for a little\nassistance. Complete the set with one arm, then move on to the other arm, don't do\none rep each because it alters the path of the working arm shortening the effective\nrange of motion of the pecs. Completely rest the chest on the floor on each rep for\nhalf a second, keep the pushing shoulder back and down as during a regular push-up,\nexplode up, lock the elbow, maintain a half second contraction while attempting to\nbring your working hand closer to the other one, descend with a full 2 seconds tempo.\nDon't push yourself away from your working hand to the side when you press (making\nthe grip width wider at the top), that way of making up for being too weak to do the\nexercise shortens the effective range of motion and removes tension, if you need\nassistance to do the exercise it's much better to bend your straight arm a little so that\nit can assist more\n, that way you lose nothing. If you can't complete 5 reps with one arm during a set,\neither use the assisted method detailed before to complete it, and/or do rest-pause\nuntil you do: you stop the set short of 5, rest for 3-5 deep breaths, then continue the\nset inserting more rest pauses until you get 5 total reps with that arm. You can\nincrease the tension with bands\nsame as with the regular push-ups."
-  },
-  {
-    "name": "Band leg curls",
-    "muscle": "Hamstrings & Glutes",
-    "type": "Curl",
-    "imageUrl": "https://4.bp.blogspot.com/-CV8PLaPLR5w/V0xEzHsoUmI/AAAAAAAANc4/AHz-0vX_q9A_e3_ZyBT6X79CXPCSIaGkQCLcB/s1600/resistance-band-leg-curl1.gif",
-    "notes": ""
-  },
-  {
-    "name": "Band leg extensions (standing version)",
-    "muscle": "Quads & Glutes",
-    "type": "Isolation",
-    "imageUrl": "https://youtu.be/ZX1BTBFi_go",
-    "notes": "standing version\n, seated version\n, laying down version"
-  },
-  {
-    "name": "Band romanian deadlift",
-    "muscle": "Hamstrings & Glutes",
-    "type": "Lift",
-    "imageUrl": "https://i.imgur.com/v71BILz.gif",
-    "notes": "Some bands give super heavy resistance, maybe you have one, if so you can use it to\ndo the traditional RDLs with both legs."
-  },
-  {
-    "name": "Bar Hanging tucks",
-    "muscle": "Abs",
-    "type": "Isolation",
-    "imageUrl": "https://gfycat.com/horribleimperturbablekitten",
-    "notes": ""
-  },
-  {
-    "name": "Bench Press",
-    "muscle": "Chest",
-    "type": "Horizontal Press",
-    "imageUrl": "",
-    "notes": ""
-  },
-  {
-    "name": "Bent over W raises",
-    "muscle": "Shoulders",
-    "type": "Facepull variation",
-    "imageUrl": "https://www.youtube.com/watch?v=16ZFEUpFEv4&feature=youtu.be&t=150",
-    "notes": "use buckets, kegs, bags, cans, jugs, etc."
-  },
-  {
-    "name": "Bicep curls",
-    "muscle": "Biceps",
-    "type": "Curl",
-    "imageUrl": "https://i.pinimg.com/originals/a2/86/0f/a2860fb708fcf5519be6354a3e6db15c.gif",
-    "notes": ""
-  },
-  {
-    "name": "Bicycle Crunch",
-    "muscle": "Abs",
-    "type": "Core",
-    "imageUrl": "https://media0.giphy.com/media/TMNCtgJGJnV8k/giphy.gif",
-    "notes": ""
-  },
-  {
-    "name": "Bilateral Leg-resisted bicep curls",
-    "muscle": "Biceps",
-    "type": "Curl",
-    "imageUrl": "https://youtu.be/16ZFEUpFEv4?t=150",
-    "notes": "Don't round your lower back! get a long enough towel if you need to in order\nto avoid that. You can also use a rope, chain, cable, etc."
-  },
-  {
-    "name": "Bodyweight bicep curls .",
-    "muscle": "Biceps",
-    "type": "Curl",
-    "imageUrl": "https://i.imgur.com/FCmPiiL.gif",
-    "notes": ""
-  },
-  {
-    "name": "Bodyweight chair pull-overs",
-    "muscle": "Back",
-    "type": "Isolation",
-    "imageUrl": "https://www.youtube.com/watch?v=q7JIc1obaLU",
-    "notes": "You can do an assisted version against a wall which is easier (0:38)."
-  },
-  {
-    "name": "Bodyweight chest flyes",
-    "muscle": "Chest",
-    "type": "Isolation",
-    "imageUrl": "https://i.imgur.com/78nd7xB.gif",
-    "notes": "This exercise can be super heavy (as shown in the video) or lighter if you put your\nknees on the floor and/or bend your elbows\n. Notice that there's a sliding material between the hands and the floor, on smooth\nsurfaces you can use gloves, or some cloth, paper, cardboard, etc. For a rough surface\nyou can use plastic bottles (flatted), they slide well enough, or use something with\nwheels like roller skates."
-  },
-  {
-    "name": "Bodyweight leg extensions",
-    "muscle": "Quads & Glutes",
-    "type": "Isolation",
-    "imageUrl": "https://youtu.be/16ZFEUpFEv4?t=150",
-    "notes": "The key here is to keep the hips extended (hip to knee portion of the leg in line with\nthe torso) and only flex at the knee level. Do them unilaterally if the rep count get too\nhigh. The tension can also be increased with bands"
-  },
-  {
-    "name": "Bulgarian split squats",
-    "muscle": "Quads & Glutes",
-    "type": "Quad compound",
-    "imageUrl": "https://i.imgur.com/S654hy6.gif",
-    "notes": "Do a slow controlled descend, go deep, pause for half a second, explode up"
-  },
-  {
-    "name": "Chin-ups",
-    "muscle": "Back",
-    "type": "Vertical pull",
-    "imageUrl": "https://i.imgur.com/hKDXkQr.gif",
-    "notes": "Use a dead hang technique, going all the way down till full stretch leaving your\nshoulders rise completely like in the example. Explode up, don't pause at the top,\ndescend with a 2 full seconds negative, pause at full stretch for half a second, begin\nthe next rep."
-  },
-  {
-    "name": "Deadlifts",
-    "muscle": "Quads & Glutes",
-    "type": "Quad compound",
-    "imageUrl": "",
-    "notes": ""
-  },
-  {
-    "name": "Decline archer push-ups",
-    "muscle": "Chest",
-    "type": "Incline Press",
-    "imageUrl": "https://youtu.be/49d_PratfaQ?t=280",
-    "notes": "(4:40-6:16). Follow the same instructions for the Horizontal Press Level 5, the only\ndifference is you elevate your feet on a high surface."
-  },
-  {
-    "name": "Decline diamond push-ups",
-    "muscle": "Triceps",
-    "type": "Close-grip Press",
-    "imageUrl": "https://youtu.be/49d_PratfaQ?t=280",
-    "notes": ""
-  },
-  {
-    "name": "Decline inverted rows",
-    "muscle": "Back",
-    "type": "Horizontal pull",
-    "imageUrl": "https://youtu.be/49d_PratfaQ?t=280",
-    "notes": "The key here is the elevation of the feet. Pause for 1 second at the bottom, getting a\nfull stretch, then explode up, sticking your chest out pulling your shoulders back, get\nto full contraction pulling your elbows back as far as they go, don't pause and go back\ndown slowly controlling the movement; pull towards your upper abdomen or lower\nchest. You can use an overhand grip or an underhand grip. You can use a table like in\nthe example, or a stick and two chairs\n, or the back of two chairs\n, or the bedsheet method"
-  },
-  {
-    "name": "Decline one arm push-ups",
-    "muscle": "Chest",
-    "type": "Incline Press",
-    "imageUrl": "https://i.imgur.com/Ms5eFdt.gif",
-    "notes": "SUPER HARD exercise to do. Basically what you want to do here is to follow the same\ninstructions for the regular one arm push-up\n, but elevating the feet on a high surface."
-  },
-  {
-    "name": "Decline push-ups",
-    "muscle": "Chest",
-    "type": "Incline Press",
-    "imageUrl": "https://i.imgur.com/RcQmO60.gif",
-    "notes": "The higher the elevation of the feet, the harder the exercise. Use a chair, a table, etc."
-  },
-  {
-    "name": "Decline push-ups on a wall",
-    "muscle": "Chest",
-    "type": "Incline Press",
-    "imageUrl": "https://www.youtube.com/watch?v=AhdtowFDKT0&feature=youtu.be&t=188",
-    "notes": "(3:08). Having your feet on the wall, along with the leg movement to maintain the\nconstant level of incline of the torso, allows you to add extra resistance to the exercise\nby pushing harder with your legs on the way up (not on the way down), which\ncounters the force of the arms."
-  },
-  {
-    "name": "Deficit decline pike push-ups",
-    "muscle": "Shoulders",
-    "type": "Vertical press",
-    "imageUrl": "https://www.youtube.com/watch?v=ESpdiGDAhSM",
-    "notes": "Two main changes from the standard pike push-ups: 1) you put your hands on an\nelevated surface, and that allows you to continue the movement beyond the point on\nwhich your head would touch the floor on the regular pike push-up, giving you the full\nrange of motion of an overhead press, and 2) you elevate your feet. Why Level 2\"+\"?\nBecause this has multiple levels of progression built in: you start like in the example,\nand then you increase the resistance by elevating your feet higher and higher, like first\nelevating them on the seat of a chair, then on a table, then on a countertop, then on a\nwall."
-  },
-  {
-    "name": "Deficit decline push-ups",
-    "muscle": "Chest",
-    "type": "Incline Press",
-    "imageUrl": "https://i.imgur.com/SUgmOSx.gif",
-    "notes": "The idea here is to do the Level 4 exercise (against a wall or elevating the feet on any\nother high surface) but elevating the hands on something, like the seat of two chairs,\nto allow the torso and your head to travel further down towards the bottom position\n(in the Level 4, the floor limits your range of motion)."
-  },
-  {
-    "name": "Deficit handstand push-up against a wall",
-    "muscle": "Shoulders",
-    "type": "Vertical press",
-    "imageUrl": "https://www.youtube.com/watch?v=ibDaTSNCAkE",
-    "notes": "Whoa whoa what? What about all the handstand progressions that come before this\none? We're not here to do gymnastics guys, our only objective here is to imitate the\noverhead press with enough resistance to hit a rep-range, that's it. The previous\nexercise, the decline deficit pike push-up, already gave us full vertical press range on\nmotion and it progressed by elevating the feet higher and higher, eventually you\nelevate them so much that you reach a completely vertical position which lands you in\nthis exercise here. Key point: your back must be facing the wall (like in the example)\nnot your chest, because if you do it the other way around you tend to hyperextend\nyour spine."
-  },
-  {
-    "name": "Diamond push-ups",
-    "muscle": "Triceps",
-    "type": "Close-grip Press",
-    "imageUrl": "https://i.imgur.com/O8mmY38.gif",
-    "notes": ""
-  },
-  {
-    "name": "Dips",
-    "muscle": "Chest",
-    "type": "Horizontal Press",
-    "imageUrl": "https://i.imgur.com/oqdbSHM.gif",
-    "notes": "The weight you're moving here is roughly equivalent to a decline bench press loaded\nwith 100% of your body weight. Follow the instructions in the video. At home you can\ndo them with the back of two chairs\n(you can put some weight on them so that they don't fall back), the seat of two chairs\n, a table\n, a countertop a table and some books\n, etc. be creative. What the hell does \"Level 4 to âˆž\" mean? Well beyond doing them\nwith just body weight (lvl 4), if you have a dipping belt and some plates, then you have\nan unlimited level of progression, you just keep adding weight."
-  },
-  {
-    "name": "Dumbbell Hamstring Curl",
-    "muscle": "Hamstrings & Glutes",
-    "type": "Curl",
-    "imageUrl": "https://www.youtube.com/watch?v=cSzoVHHnuu0",
-    "notes": ""
-  },
-  {
-    "name": "Facepulls with bands",
-    "muscle": "Shoulders",
-    "type": "Facepull variation",
-    "imageUrl": "https://i.imgur.com/cuGJqve.gif",
-    "notes": "No bands? More options"
-  },
-  {
-    "name": "Friction resisted sissy squats",
-    "muscle": "Quads & Glutes",
-    "type": "Quad compound",
-    "imageUrl": "https://www.youtube.com/watch?v=cSzoVHHnuu0",
-    "notes": ""
-  },
-  {
-    "name": "Hands up pike push-ups",
-    "muscle": "Chest",
-    "type": "Incline Press",
-    "imageUrl": "https://www.youtube.com/watch?v=cSzoVHHnuu0",
-    "notes": "(2:27-3:27). The main diferences between this and a conventional pike push-up\n(which is a shoulder exercise) are: 1) at the top you don't finish with your arms\ncompletely vertical above your head like in the top position of an overhead press,\ninstead they're in the incline bench press position; and 2) at the bottom you go\nhorizontal instead of keeping your hips bent, which increases the range of motion of\nthe chest because it allows your shoulders to travel further back (the incline position\nis not necessary at the bottom to emphasize the upper chest, only at the top)."
-  },
-  {
-    "name": "Hip Thrusts",
-    "muscle": "Glutes",
-    "type": "Horizontal Push",
-    "imageUrl": "https://www.youtube.com/watch?v=cSzoVHHnuu0",
-    "notes": "The video in the link shows you all the progressions from the easiest variation to the\nhardest one, alongside technique instructions."
-  },
-  {
-    "name": "Incline diamond push-ups",
-    "muscle": "Triceps",
-    "type": "Close-grip Press",
-    "imageUrl": "https://www.youtube.com/watch?v=cSzoVHHnuu0",
-    "notes": ""
-  },
-  {
-    "name": "Incline inverted rows",
-    "muscle": "Back",
-    "type": "Horizontal pull",
-    "imageUrl": "https://www.nerdfitness.com/wp-content/uploads/2019/03/staci-incline-inverted-row.gif",
-    "notes": "Pause for 1 second at the bottom, getting a full stretch, then explode up,\nsticking your chest out pulling your shoulders back, get to full contraction pulling your\nelbows back as far as they go, don't pause and go back down slowly controlling the\nmovement; pull towards your upper abdomen or lower chest."
-  },
-  {
-    "name": "Incline push-ups",
-    "muscle": "Chest",
-    "type": "Horizontal Press",
-    "imageUrl": "https://i0.wp.com/blog.hellofresh.com/wp-content/uploads/2017/01/workout-push-ups.gif?resize=480%2C270&ssl=1",
-    "notes": "Maintain a straight spine and legs, don't let your pelvis fall. For this variation, put\nyour hands on a surface as high as a table or a countertop, and when that becomes\ntoo easy, just move on to the next level. The weight you're moving here is roughly\nequivalent to a bench press loaded with 35% of your body weight."
-  },
-  {
-    "name": "Inverted rows with bent knees",
-    "muscle": "Back",
-    "type": "Horizontal pull",
-    "imageUrl": "https://www.youtube.com/watch?v=cSzoVHHnuu0",
-    "notes": "Pause for 1 second at the bottom, getting a full stretch, then explode up, sticking\nyour chest out pulling your shoulders back, get to full contraction pulling your elbows\nback as far as they go, don't pause and go back down slowly controlling the\nmovement; pull towards your upper abdomen or lower chest. You can use an\noverhand grip or an underhand grip. You can use a stick and two chairs like in the\nexample, or a table\n, or the back of two chairs\n, or the bedsheet method"
-  },
-  {
-    "name": "Inverted rows with straight legs",
-    "muscle": "Back",
-    "type": "Horizontal pull",
-    "imageUrl": "https://www.youtube.com/watch?v=cSzoVHHnuu0",
-    "notes": "Pause for 1 second at the bottom, getting a full stretch, then explode up, sticking\nyour chest out pulling your shoulders back, get to full contraction pulling your elbows\nback as far as they go, don't pause and go back down slowly controlling the\nmovement; pull towards your upper abdomen or lower chest. You can use an\noverhand grip or an underhand grip. You can use a table like in the example, or a stick\nand two chairs\n, or the back of two chairs\n, or the bedsheet method"
-  },
-  {
-    "name": "Inverted Skullcrushers",
-    "muscle": "Triceps",
-    "type": "Isolation",
-    "imageUrl": "https://i.imgur.com/rMWqubP.gif",
-    "notes": "The more horizontal you are the harder the exercise, and conversely the more\nvertical you are the easier."
-  },
-  {
-    "name": "Knee diamond push-ups",
-    "muscle": "Triceps",
-    "type": "Close-grip Press",
-    "imageUrl": "https://www.youtube.com/watch?v=cSzoVHHnuu0",
-    "notes": ""
-  },
-  {
-    "name": "Knee one arm push-ups",
-    "muscle": "Chest",
-    "type": "Horizontal Press",
-    "imageUrl": "https://www.youtube.com/watch?v=cSzoVHHnuu0",
-    "notes": "The weight you're moving here is roughly equivalent to a bench press loaded with\n100% of your body weight, plus the stability demands. Because you usually can't move\nstraight from the archer push-up to the full one arm push-up because there's a big\ndifference in the resistance, you go through this intermediate variation first. Complete\nthe set with one arm, then move on to the other arm. Key points: your knees have to\nbe quite separated, and your resting hand is placed at the side of your thigh (don't put\nit behind your back). I recommend you put something cushy below the knee that's\nopposite to your working hand. Completely rest the chest on the floor on each rep for\nhalf a second, explode up, lock the elbow, maintain a half second contraction while\nattempting to bring your working hand across your body, descend with a full 2\nseconds tempo. To achieve balance, DON'T focus on flexing the spinal erectors\nopposite to your working arm, instead, focus on flexing the obliques (abs) of the same\nside as your working arm. If you can't complete 5 reps with each arm in one set,\ncontinue the set using Archer push-ups\nand/or do rest-pause until you do: finish the set with one arm, rest for 3 deep\nbreaths, continue the set inserting more rest pauses until you get 5 total reps with\nthat arm."
-  },
-  {
-    "name": "Knee push-ups",
-    "muscle": "Chest",
-    "type": "Horizontal Press",
-    "imageUrl": "https://www.youtube.com/watch?v=q7JIc1obaLU",
-    "notes": "The weight you're moving here is roughly equivalent to a bench press loaded with\n50% of your body weight. Lay on the floor, choose a comfortable hand placement\n(choose it at the bottom position, ideally you want a stretch on the pecs while being\ncomfortable at the shoulders and wrists), pull your shoulders back and down, stick\nyour chest out, contract the glutes so that your hips don't shoot up during the\nmovement, contract the abs so that you don't go into spinal hyperextension during\nthe movement, begin the execution: explode up, lock the elbows, maintain a half\nsecond contraction while attempting to bring your hands together, descend with a\ntwo full seconds tempo, at the bottom completely rest your chest on the floor to the\npoint your arms aren't pushing at all; wait half a second just to avoid rebound, reset,\nbegin the next rep."
-  },
-  {
-    "name": "Knee pushaways",
-    "muscle": "Chest",
-    "type": "Incline Press",
-    "imageUrl": "https://www.youtube.com/watch?v=q7JIc1obaLU",
-    "notes": "(2:36). Notice that this isn't a push-up with your knees on the floor, the movement at\nthe arms is different: you push yourself horizontally upwards like in the push-up, but\nyou also push yourself away vertically, resisting that motion with your legs, so that\nwhen your arms are extended they are above your head, like during an incline press."
-  },
-  {
-    "name": "Lateral raises",
-    "muscle": "Shoulders",
-    "type": "Side delt isolation",
-    "imageUrl": "https://i.imgur.com/oDSH5Rw.gif",
-    "notes": "use buckets, kegs, bags, cans, jugs, etc. filled with whatever, or bands. You can do\nthem unilaterally."
-  },
-  {
-    "name": "Leg-resisted bicep curls",
-    "muscle": "Biceps",
-    "type": "Curl",
-    "imageUrl": "https://www.youtube.com/watch?v=q7JIc1obaLU",
-    "notes": "You can also use a rope, chain, cable, etc."
-  },
-  {
-    "name": "Leg-resisted concentration curls",
-    "muscle": "Biceps",
-    "type": "Curl",
-    "imageUrl": "https://www.youtube.com/watch?v=q7JIc1obaLU",
-    "notes": "You can also use a rope, chain, cable, etc."
-  },
-  {
-    "name": "Negative pull-ups (or negative chin-ups)",
-    "muscle": "Back",
-    "type": "Vertical pull",
-    "imageUrl": "https://i.imgur.com/V5W9Zl2.gif",
-    "notes": "For when you are not strong enough to do pull-ups or chin-ups yet. You use a chair to\nput yourself into the starting position of a pull-up, then step away from it and go\ndown trying to make the descent as slow as possible (this is key). Repeat the process\nfor a total of 5 reps per set, if you have to take small breaks to get 5, that's ok. When\nyou see that you can go down really slow, try doing a full chin-up at the beginning of\nthe first set. From the moment you can do one chin-up, try doing as many as you can\non every set, filling the rest with just negatives to complete the 5 per set."
-  },
-  {
-    "name": "Nordic curls",
-    "muscle": "Hamstrings & Glutes",
-    "type": "Curl",
-    "imageUrl": "https://www.youtube.com/watch?v=q7JIc1obaLU",
-    "notes": "This is the heaviest hamstring exercise, but depending on how much assistance you\nuse from the hands, it can also be quite light. You need to ask someone for assistance\nor find a place to lock your feet, for the latter check out this awesome post with many\noptions to set it up."
-  },
-  {
-    "name": "One arm decline inverted rows",
-    "muscle": "Back",
-    "type": "Horizontal pull",
-    "imageUrl": "https://www.youtube.com/watch?v=q7JIc1obaLU",
-    "notes": "Basically the same as the\ndecline inverted rows\nexcept you only use one arm, so like the horizontal variation\nbut with your feet elevated. Avoid rotating the torso like this\n, keep it straight. Finish the set with one arm and then move to the other arm, don't\nalternate one rep each. Pause for 1 second at the bottom, getting a full stretch, then\nexplode up, sticking your chest out pulling your shoulders back, get to full contraction\npulling your elbows back as far as they go, don't pause and go back down slowly\ncontrolling the movement; pull towards your upper abdomen or lower chest. You can\nuse an overhand grip or an underhand grip. You can use a table\n, or a stick and two chairs\n, or the bedsheet method"
-  },
-  {
-    "name": "One arm inverted rows with bent knees",
-    "muscle": "Back",
-    "type": "Horizontal pull",
-    "imageUrl": "https://www.youtube.com/watch?v=q7JIc1obaLU",
-    "notes": "Basically the same\nas the inverted rows with bent knees\nexcept you only use one arm, and you're going to have to separate your feet more to\nmaintain balance (see the straight legged variation\nfor reference). Avoid rotating the torso like this\n, keep it straight. Finish the set with one arm and then move to the other arm, don't\nalternate one rep each. Pause for 1 second at the bottom, getting a full stretch, then\nexplode up, sticking your chest out pulling your shoulders back, get to full contraction\npulling your elbows back as far as they go, don't pause and go back down slowly\ncontrolling the movement; pull towards your upper abdomen or lower chest. You can\nuse an overhand grip or an underhand grip. You can use a table\n, or a stick and two chairs\n, or the bedsheet method"
-  },
-  {
-    "name": "One arm inverted rows with straight legs",
-    "muscle": "Back",
-    "type": "Horizontal pull",
-    "imageUrl": "https://www.youtube.com/watch?v=q7JIc1obaLU",
-    "notes": "Notice that you have to separate your legs to maintain balance . Avoid rotating the\ntorso like this\n, keep it straight. Finish the set with one arm and then move to the other arm, don't\nalternate one rep each. Pause for 1 second at the bottom, getting a full stretch, then\nexplode up, sticking your chest out pulling your shoulders back, get to full contraction\npulling your elbows back as far as they go, don't pause and go back down slowly\ncontrolling the movement; pull towards your upper abdomen or lower chest. You can\nuse an overhand grip or an underhand grip. You can use a table\n, or a stick and two chairs\n, or the bedsheet method"
-  },
-  {
-    "name": "One arm pull-ups",
-    "muscle": "Back",
-    "type": "Vertical pull",
-    "imageUrl": "https://www.youtube.com/watch?v=vdjWgw98EeI",
-    "notes": "The final boss"
-  },
-  {
-    "name": "One arm push-ups",
-    "muscle": "Chest",
-    "type": "Horizontal Press",
-    "imageUrl": "https://www.youtube.com/watch?v=q7JIc1obaLU",
-    "notes": "The weight you're moving here is roughly equivalent to a bench press loaded with\n1.3 times your body weight, plus the stability demands. Complete the set with one\narm, then move on to the other arm. Completely rest the chest on the floor on each\nrep for half a second, explode up, lock the elbow, maintain a half second contraction\nwhile attempting to bring your working hand across your body, descend with a full 2\nseconds tempo. Don't do funky stuff with your shoulder\n(2:23) you will see TONS of people screwing this up out of rushing to be able to do\nthis exercise; know that not only is this bad for the shoulder, it removes both ROM\nand tension from the chest. DON'T twist your torso at any point; to achieve balance,\nDON'T focus on flexing the spinal erectors opposite to your working arm, instead,\nfocus on flexing the obliques (abs) of the same side as your working arm. If you can't\ncomplete 5 reps with each arm in one set, continue the set with your knees on the\nfloor and/or do rest-pause until you do: finish the set with one arm, rest for 3 deep\nbreaths, continue the set inserting more rest pauses until you get 5 total reps with\nthat arm. To keep increasing the intensity, either use bands or find a way to put\nweight on your back."
-  },
-  {
-    "name": "Pike push-ups",
-    "muscle": "Shoulders",
-    "type": "Vertical press",
-    "imageUrl": "https://www.youtube.com/watch?v=1Jjjyp4uhks&feature=youtu.be&t=28",
-    "notes": "(0:28-1:28). If you're not strong enough to perform this movement for at least 3-5\nreps yet, skip the vertical presses and just continue getting stronger with your\nhorizontal and incline presses, the strength you build there has a carryover effect to\nthis one, so eventually you'll be able to do it."
-  },
-  {
-    "name": "Piked inverted rows",
-    "muscle": "Back",
-    "type": "Horizontal pull",
-    "imageUrl": "https://www.youtube.com/watch?v=q7JIc1obaLU",
-    "notes": "Piked inverted rows\n. At home your do them with this table variation\nor the two chairs and the stick variation\n(only if you can secure the stick really tight so that it doesn't slide and the chairs so\nthat they don't flip) by just elevating the legs in a pike; you can also use a pull-up bar\nlike in the example."
-  },
-  {
-    "name": "Pistol squats",
-    "muscle": "Quads & Glutes",
-    "type": "Quad compound",
-    "imageUrl": "https://www.youtube.com/watch?v=7NvOuty_Fnc",
-    "notes": "Don't just let yourself drop, use a 2 full seconds negative. Use something like two\nchairs to hold on to if you find them too difficult or lack balance. To increase the\nresistance, besides the natural way of holding something heavy or using bands, you\ncan also load them quite easily by using friction against a wall"
-  },
-  {
-    "name": "Plank",
-    "muscle": "Abs",
-    "type": "Core",
-    "imageUrl": "https://media1.giphy.com/media/2UqZvQq4p9DjTBDVRc/giphy.gif",
-    "notes": ""
-  },
-  {
-    "name": "Pull-ups",
-    "muscle": "Back",
-    "type": "Vertical pull",
-    "imageUrl": "https://i.imgur.com/wfcYsLQ.gif",
-    "notes": "Use a dead hang technique, going all the way down till full stretch leaving your\nshoulders rise completely like in the example. Explode up, don't pause at the top,\ndescend with a 2 full seconds negative, pause at full stretch for half a second, begin\nthe next rep."
-  },
-  {
-    "name": "Push-ups",
-    "muscle": "Chest",
-    "type": "Horizontal Press",
-    "imageUrl": "https://www.youtube.com/watch?v=q7JIc1obaLU",
-    "notes": "The weight you're moving here is roughly equivalent to a bench press loaded with\n65% of your body weight. You can increase the load with bands\n. Lay on the floor, choose a comfortable hand placement (choose it at the bottom\nposition, ideally you want a stretch on the pecs while being comfortable at the\nshoulders and wrists), pull your shoulders back and down, stick your chest out,\ncontract the glutes so that your hips don't shoot up during the movement, contract\nthe abs so that you don't go into spinal hyperextension during the movement, begin\nthe execution: explode up, lock the elbows, maintain a half second contraction while\nattempting to bring your hands together, descend with a two full seconds tempo, at\nthe bottom completely rest your chest on the floor to the point your arms aren't\npushing at all; wait half a second just to avoid rebound, reset, begin the next rep. Also\ncheck out this video"
-  },
-  {
-    "name": "Regular curls using buckets",
-    "muscle": "Biceps",
-    "type": "Curl",
-    "imageUrl": "https://www.youtube.com/watch?v=q7JIc1obaLU",
-    "notes": "kegs, bags, cans, jugs, etc. filled with whatever, or bands."
-  },
-  {
-    "name": "Reverse lunges",
-    "muscle": "Quads & Glutes",
-    "type": "Quad compound",
-    "imageUrl": "https://i.imgur.com/enSbTQ6.gif",
-    "notes": ""
-  },
-  {
-    "name": "Rings Hanging tucks",
-    "muscle": "Abs",
-    "type": "Core",
-    "imageUrl": "https://gfycat.com/horribleimperturbablekitten",
-    "notes": ""
-  },
-  {
-    "name": "Rings Roll Out",
-    "muscle": "Abs",
-    "type": "Core",
-    "imageUrl": "https://www.youtube.com/watch?v=LBUfnmugKLw",
-    "notes": ""
-  },
-  {
-    "name": "Seated band overhead press",
-    "muscle": "Shoulders",
-    "type": "Vertical press",
-    "imageUrl": "https://www.youtube.com/watch?v=q7JIc1obaLU",
-    "notes": ""
-  },
-  {
-    "name": "Shoulder Press",
-    "muscle": "Shoulders",
-    "type": "Vertical press",
-    "imageUrl": "",
-    "notes": ""
-  },
-  {
-    "name": "Shrugs",
-    "muscle": "Back",
-    "type": "Isolation",
-    "imageUrl": "https://www.youtube.com/watch?v=q7JIc1obaLU",
-    "notes": "(holding buckets, kegs, bags, cans, jugs, etc. filled with whatever). 1\nfull second concentric, hold 1 second at the top, 3-4 seconds eccentric, hold 1 second\nat the bottom."
-  },
-  {
-    "name": "Single-leg romanian deadlift",
-    "muscle": "Hamstrings & Glutes",
-    "type": "Lift",
-    "imageUrl": "https://www.youtube.com/watch?v=GoKjrvJi-Iw&feature=youtu.be",
-    "notes": "Load them holding buckets, kegs, bags, cans, jugs, etc. filled with whatever, or using\nbands."
-  },
-  {
-    "name": "Sissy squats",
-    "muscle": "Quads & Glutes",
-    "type": "Quad compound",
-    "imageUrl": "https://www.youtube.com/watch?v=VUiFlZ2FsKA",
-    "notes": ""
-  },
-  {
-    "name": "Sliding hamstring curl 1",
-    "muscle": "Hamstrings & Glutes",
-    "type": "Curl",
-    "imageUrl": "https://i.imgur.com/NzvAOOR.gif",
-    "notes": "Notice that there's a sliding material under the feet, can be a piece of cloth, paper,\netc."
-  },
-  {
-    "name": "Sliding hamstring curl 2",
-    "muscle": "Hamstrings & Glutes",
-    "type": "Curl",
-    "imageUrl": "https://i.imgur.com/0ela8FL.gif",
-    "notes": ""
-  },
-  {
-    "name": "Sliding hamstring curl 3",
-    "muscle": "Hamstrings & Glutes",
-    "type": "Curl",
-    "imageUrl": "https://i.imgur.com/zwvKhkI.gif",
-    "notes": ""
-  },
-  {
-    "name": "Sliding hamstring curl 4",
-    "muscle": "Hamstrings & Glutes",
-    "type": "Curl",
-    "imageUrl": "https://i.imgur.com/PzunYhu.gif",
-    "notes": "Finish the whole set with one leg, then move on to the other leg."
-  },
-  {
-    "name": "Sliding hamstring curl 5",
-    "muscle": "Hamstrings & Glutes",
-    "type": "Curl",
-    "imageUrl": "https://i.imgur.com/5A73etM.gif",
-    "notes": ""
-  },
-  {
-    "name": "Sliding hamstring curl 5",
-    "muscle": "Hamstrings & Glutes",
-    "type": "Curl",
-    "imageUrl": "https://i.imgur.com/Co3mJSp.gif",
-    "notes": ""
-  },
-  {
-    "name": "Sliding pull-overs",
-    "muscle": "Back",
-    "type": "Isolation",
-    "imageUrl": "https://i.imgur.com/Xo1RQIy.gif",
-    "notes": "To increase the resistance you can sustain yourself with your feet instead of your\nknees, and/or do them with one arm."
-  },
-  {
-    "name": "Squats (weights)",
-    "muscle": "",
-    "type": "",
-    "imageUrl": "",
-    "notes": ""
-  },
-  {
-    "name": "Standing calf raises",
-    "muscle": "Calves",
-    "type": "Raises",
-    "imageUrl": "https://www.youtube.com/watch?v=q7JIc1obaLU",
-    "notes": "Check this video\nto learn the proper form."
-  },
-  {
-    "name": "Step-ups",
-    "muscle": "Quads & Glutes",
-    "type": "Quad compound",
-    "imageUrl": "https://www.youtube.com/watch?v=q7JIc1obaLU",
-    "notes": "The higher the step the better. Finish the set with one leg, then move on to the other\nleg."
-  },
-  {
-    "name": "Towel slide lateral raises (8:27)",
-    "muscle": "Shoulders",
-    "type": "Side delt isolation",
-    "imageUrl": "https://www.youtube.com/watch?v=q7JIc1obaLU",
-    "notes": ""
-  },
-  {
-    "name": "Unilateral standing calf raises",
-    "muscle": "Calves",
-    "type": "Raises",
-    "imageUrl": "https://i.imgur.com/KqNQgMy.gif",
-    "notes": "Check this video\nto learn the proper form."
-  },
-  {
-    "name": "V-Snaps",
-    "muscle": "Abs",
-    "type": "Core",
-    "imageUrl": "",
-    "notes": ""
-  },
-  {
-    "name": "Wall diamond push-ups",
-    "muscle": "Triceps",
-    "type": "Close-grip Press",
-    "imageUrl": "https://www.youtube.com/watch?v=q7JIc1obaLU",
-    "notes": ""
-  }
- ]
+    {
+        "name": "Air squat",
+        "muscle": "Quads & Glutes",
+        "type": "Quad compound",
+        "imageUrl": "https://media1.giphy.com/media/13v55Ya4uWsXS/giphy.gif",
+        "notes": "If you're using it as a starting exercise, just follow the instructions in the video and\ndisregard the following. If you're using it as a light variation, for a super-set or as a\nfinisher, follow these tips: maintain a completely vertical torso by elevating your arms\nforward during the descend and achieve a full stretch in the quads to the point where\nthe calves and hamstrings are pressing against each other, stand on tiptoe if necessary\nto achieve that (what? sacrilege! Yeah with a loaded barbell on you back or if you're\nvery weak maybe, here it's not a problem). Begin by isometrically contracting the\nquads hard, then slow tempo down, pause, explode up, lock the knees, don't pause,\ndon't release the strong quad contraction from the beginning, come back down; it will\nburn. You can load some extra weight in a backpack, or holding onto something with\nyour hands (making it a goblet squat)."
+    },
+    {
+        "name": "Archer pull-ups",
+        "muscle": "Back",
+        "type": "Vertical pull",
+        "imageUrl": "https://i.imgur.com/O8mmY38.gif",
+        "notes": "Notice the pause at the bottom, you don't swing from one side to the other."
+    },
+    {
+        "name": "Archer push-ups",
+        "muscle": "Chest",
+        "type": "Horizontal Press",
+        "imageUrl": "https://i.imgur.com/bzQMhNJ.gif",
+        "notes": "The weight you're moving here is roughly equivalent to a bench press loaded with\n82% of your body weight. Notice the feet separation. What you're doing here is\nessentially a one arm push-up, but using the arm you keep straight for a little\nassistance. Complete the set with one arm, then move on to the other arm, don't do\none rep each because it alters the path of the working arm shortening the effective\nrange of motion of the pecs. Completely rest the chest on the floor on each rep for\nhalf a second, keep the pushing shoulder back and down as during a regular push-up,\nexplode up, lock the elbow, maintain a half second contraction while attempting to\nbring your working hand closer to the other one, descend with a full 2 seconds tempo.\nDon't push yourself away from your working hand to the side when you press (making\nthe grip width wider at the top), that way of making up for being too weak to do the\nexercise shortens the effective range of motion and removes tension, if you need\nassistance to do the exercise it's much better to bend your straight arm a little so that\nit can assist more\n, that way you lose nothing. If you can't complete 5 reps with one arm during a set,\neither use the assisted method detailed before to complete it, and/or do rest-pause\nuntil you do: you stop the set short of 5, rest for 3-5 deep breaths, then continue the\nset inserting more rest pauses until you get 5 total reps with that arm. You can\nincrease the tension with bands\nsame as with the regular push-ups."
+    },
+    {
+        "name": "Band leg curls",
+        "muscle": "Hamstrings & Glutes",
+        "type": "Curl",
+        "imageUrl": "https://4.bp.blogspot.com/-CV8PLaPLR5w/V0xEzHsoUmI/AAAAAAAANc4/AHz-0vX_q9A_e3_ZyBT6X79CXPCSIaGkQCLcB/s1600/resistance-band-leg-curl1.gif",
+        "notes": ""
+    },
+    {
+        "name": "Band leg extensions (standing version)",
+        "muscle": "Quads & Glutes",
+        "type": "Isolation",
+        "imageUrl": "https://youtu.be/ZX1BTBFi_go",
+        "notes": "standing version\n, seated version\n, laying down version"
+    },
+    {
+        "name": "Band romanian deadlift",
+        "muscle": "Hamstrings & Glutes",
+        "type": "Lift",
+        "imageUrl": "https://i.imgur.com/v71BILz.gif",
+        "notes": "Some bands give super heavy resistance, maybe you have one, if so you can use it to\ndo the traditional RDLs with both legs."
+    },
+    {
+        "name": "Bar Hanging tucks",
+        "muscle": "Abs",
+        "type": "Isolation",
+        "imageUrl": "https://gfycat.com/horribleimperturbablekitten",
+        "notes": ""
+    },
+    {
+        "name": "Bench Press",
+        "muscle": "Chest",
+        "type": "Horizontal Press",
+        "imageUrl": "",
+        "notes": ""
+    },
+    {
+        "name": "Bent over W raises",
+        "muscle": "Shoulders",
+        "type": "Facepull variation",
+        "imageUrl": "https://www.youtube.com/watch?v=16ZFEUpFEv4&feature=youtu.be&t=150",
+        "notes": "use buckets, kegs, bags, cans, jugs, etc."
+    },
+    {
+        "name": "Bicep curls",
+        "muscle": "Biceps",
+        "type": "Curl",
+        "imageUrl": "https://i.pinimg.com/originals/a2/86/0f/a2860fb708fcf5519be6354a3e6db15c.gif",
+        "notes": ""
+    },
+    {
+        "name": "Bicycle Crunch",
+        "muscle": "Abs",
+        "type": "Core",
+        "imageUrl": "https://media0.giphy.com/media/TMNCtgJGJnV8k/giphy.gif",
+        "notes": ""
+    },
+    {
+        "name": "Bilateral Leg-resisted bicep curls",
+        "muscle": "Biceps",
+        "type": "Curl",
+        "imageUrl": "https://youtu.be/16ZFEUpFEv4?t=150",
+        "notes": "Don't round your lower back! get a long enough towel if you need to in order\nto avoid that. You can also use a rope, chain, cable, etc."
+    },
+    {
+        "name": "Bodyweight bicep curls .",
+        "muscle": "Biceps",
+        "type": "Curl",
+        "imageUrl": "https://i.imgur.com/FCmPiiL.gif",
+        "notes": ""
+    },
+    {
+        "name": "Bodyweight chair pull-overs",
+        "muscle": "Back",
+        "type": "Isolation",
+        "imageUrl": "https://www.youtube.com/watch?v=q7JIc1obaLU",
+        "notes": "You can do an assisted version against a wall which is easier (0:38)."
+    },
+    {
+        "name": "Bodyweight chest flyes",
+        "muscle": "Chest",
+        "type": "Isolation",
+        "imageUrl": "https://i.imgur.com/78nd7xB.gif",
+        "notes": "This exercise can be super heavy (as shown in the video) or lighter if you put your\nknees on the floor and/or bend your elbows\n. Notice that there's a sliding material between the hands and the floor, on smooth\nsurfaces you can use gloves, or some cloth, paper, cardboard, etc. For a rough surface\nyou can use plastic bottles (flatted), they slide well enough, or use something with\nwheels like roller skates."
+    },
+    {
+        "name": "Bodyweight leg extensions",
+        "muscle": "Quads & Glutes",
+        "type": "Isolation",
+        "imageUrl": "https://youtu.be/16ZFEUpFEv4?t=150",
+        "notes": "The key here is to keep the hips extended (hip to knee portion of the leg in line with\nthe torso) and only flex at the knee level. Do them unilaterally if the rep count get too\nhigh. The tension can also be increased with bands"
+    },
+    {
+        "name": "Bulgarian split squats",
+        "muscle": "Quads & Glutes",
+        "type": "Quad compound",
+        "imageUrl": "https://i.imgur.com/S654hy6.gif",
+        "notes": "Do a slow controlled descend, go deep, pause for half a second, explode up"
+    },
+    {
+        "name": "Chin-ups",
+        "muscle": "Back",
+        "type": "Vertical pull",
+        "imageUrl": "https://i.imgur.com/hKDXkQr.gif",
+        "notes": "Use a dead hang technique, going all the way down till full stretch leaving your\nshoulders rise completely like in the example. Explode up, don't pause at the top,\ndescend with a 2 full seconds negative, pause at full stretch for half a second, begin\nthe next rep."
+    },
+    {
+        "name": "Deadlifts",
+        "muscle": "Quads & Glutes",
+        "type": "Quad compound",
+        "imageUrl": "",
+        "notes": ""
+    },
+    {
+        "name": "Decline archer push-ups",
+        "muscle": "Chest",
+        "type": "Incline Press",
+        "imageUrl": "https://youtu.be/49d_PratfaQ?t=280",
+        "notes": "(4:40-6:16). Follow the same instructions for the Horizontal Press Level 5, the only\ndifference is you elevate your feet on a high surface."
+    },
+    {
+        "name": "Decline diamond push-ups",
+        "muscle": "Triceps",
+        "type": "Close-grip Press",
+        "imageUrl": "https://youtu.be/49d_PratfaQ?t=280",
+        "notes": ""
+    },
+    {
+        "name": "Decline inverted rows",
+        "muscle": "Back",
+        "type": "Horizontal pull",
+        "imageUrl": "https://youtu.be/49d_PratfaQ?t=280",
+        "notes": "The key here is the elevation of the feet. Pause for 1 second at the bottom, getting a\nfull stretch, then explode up, sticking your chest out pulling your shoulders back, get\nto full contraction pulling your elbows back as far as they go, don't pause and go back\ndown slowly controlling the movement; pull towards your upper abdomen or lower\nchest. You can use an overhand grip or an underhand grip. You can use a table like in\nthe example, or a stick and two chairs\n, or the back of two chairs\n, or the bedsheet method"
+    },
+    {
+        "name": "Decline one arm push-ups",
+        "muscle": "Chest",
+        "type": "Incline Press",
+        "imageUrl": "https://i.imgur.com/Ms5eFdt.gif",
+        "notes": "SUPER HARD exercise to do. Basically what you want to do here is to follow the same\ninstructions for the regular one arm push-up\n, but elevating the feet on a high surface."
+    },
+    {
+        "name": "Decline push-ups",
+        "muscle": "Chest",
+        "type": "Incline Press",
+        "imageUrl": "https://i.imgur.com/RcQmO60.gif",
+        "notes": "The higher the elevation of the feet, the harder the exercise. Use a chair, a table, etc."
+    },
+    {
+        "name": "Decline push-ups on a wall",
+        "muscle": "Chest",
+        "type": "Incline Press",
+        "imageUrl": "https://www.youtube.com/watch?v=AhdtowFDKT0&feature=youtu.be&t=188",
+        "notes": "(3:08). Having your feet on the wall, along with the leg movement to maintain the\nconstant level of incline of the torso, allows you to add extra resistance to the exercise\nby pushing harder with your legs on the way up (not on the way down), which\ncounters the force of the arms."
+    },
+    {
+        "name": "Deficit decline pike push-ups",
+        "muscle": "Shoulders",
+        "type": "Vertical press",
+        "imageUrl": "https://www.youtube.com/watch?v=ESpdiGDAhSM",
+        "notes": "Two main changes from the standard pike push-ups: 1) you put your hands on an\nelevated surface, and that allows you to continue the movement beyond the point on\nwhich your head would touch the floor on the regular pike push-up, giving you the full\nrange of motion of an overhead press, and 2) you elevate your feet. Why Level 2\"+\"?\nBecause this has multiple levels of progression built in: you start like in the example,\nand then you increase the resistance by elevating your feet higher and higher, like first\nelevating them on the seat of a chair, then on a table, then on a countertop, then on a\nwall."
+    },
+    {
+        "name": "Deficit decline push-ups",
+        "muscle": "Chest",
+        "type": "Incline Press",
+        "imageUrl": "https://i.imgur.com/SUgmOSx.gif",
+        "notes": "The idea here is to do the Level 4 exercise (against a wall or elevating the feet on any\nother high surface) but elevating the hands on something, like the seat of two chairs,\nto allow the torso and your head to travel further down towards the bottom position\n(in the Level 4, the floor limits your range of motion)."
+    },
+    {
+        "name": "Deficit handstand push-up against a wall",
+        "muscle": "Shoulders",
+        "type": "Vertical press",
+        "imageUrl": "https://www.youtube.com/watch?v=ibDaTSNCAkE",
+        "notes": "Whoa whoa what? What about all the handstand progressions that come before this\none? We're not here to do gymnastics guys, our only objective here is to imitate the\noverhead press with enough resistance to hit a rep-range, that's it. The previous\nexercise, the decline deficit pike push-up, already gave us full vertical press range on\nmotion and it progressed by elevating the feet higher and higher, eventually you\nelevate them so much that you reach a completely vertical position which lands you in\nthis exercise here. Key point: your back must be facing the wall (like in the example)\nnot your chest, because if you do it the other way around you tend to hyperextend\nyour spine."
+    },
+    {
+        "name": "Diamond push-ups",
+        "muscle": "Triceps",
+        "type": "Close-grip Press",
+        "imageUrl": "https://i.imgur.com/O8mmY38.gif",
+        "notes": ""
+    },
+    {
+        "name": "Dips",
+        "muscle": "Chest",
+        "type": "Horizontal Press",
+        "imageUrl": "https://i.imgur.com/oqdbSHM.gif",
+        "notes": "The weight you're moving here is roughly equivalent to a decline bench press loaded\nwith 100% of your body weight. Follow the instructions in the video. At home you can\ndo them with the back of two chairs\n(you can put some weight on them so that they don't fall back), the seat of two chairs\n, a table\n, a countertop a table and some books\n, etc. be creative. What the hell does \"Level 4 to âˆž\" mean? Well beyond doing them\nwith just body weight (lvl 4), if you have a dipping belt and some plates, then you have\nan unlimited level of progression, you just keep adding weight."
+    },
+    {
+        "name": "Dumbbell Hamstring Curl",
+        "muscle": "Hamstrings & Glutes",
+        "type": "Curl",
+        "imageUrl": "https://www.youtube.com/watch?v=cSzoVHHnuu0",
+        "notes": ""
+    },
+    {
+        "name": "Facepulls with bands",
+        "muscle": "Shoulders",
+        "type": "Facepull variation",
+        "imageUrl": "https://i.imgur.com/cuGJqve.gif",
+        "notes": "No bands? More options"
+    },
+    {
+        "name": "Friction resisted sissy squats",
+        "muscle": "Quads & Glutes",
+        "type": "Quad compound",
+        "imageUrl": "https://www.youtube.com/watch?v=cSzoVHHnuu0",
+        "notes": ""
+    },
+    {
+        "name": "Hands up pike push-ups",
+        "muscle": "Chest",
+        "type": "Incline Press",
+        "imageUrl": "https://www.youtube.com/watch?v=cSzoVHHnuu0",
+        "notes": "(2:27-3:27). The main diferences between this and a conventional pike push-up\n(which is a shoulder exercise) are: 1) at the top you don't finish with your arms\ncompletely vertical above your head like in the top position of an overhead press,\ninstead they're in the incline bench press position; and 2) at the bottom you go\nhorizontal instead of keeping your hips bent, which increases the range of motion of\nthe chest because it allows your shoulders to travel further back (the incline position\nis not necessary at the bottom to emphasize the upper chest, only at the top)."
+    },
+    {
+        "name": "Hip Thrusts",
+        "muscle": "Glutes",
+        "type": "Horizontal Push",
+        "imageUrl": "https://www.youtube.com/watch?v=cSzoVHHnuu0",
+        "notes": "The video in the link shows you all the progressions from the easiest variation to the\nhardest one, alongside technique instructions."
+    },
+    {
+        "name": "Incline diamond push-ups",
+        "muscle": "Triceps",
+        "type": "Close-grip Press",
+        "imageUrl": "https://www.youtube.com/watch?v=cSzoVHHnuu0",
+        "notes": ""
+    },
+    {
+        "name": "Incline inverted rows",
+        "muscle": "Back",
+        "type": "Horizontal pull",
+        "imageUrl": "https://www.nerdfitness.com/wp-content/uploads/2019/03/staci-incline-inverted-row.gif",
+        "notes": "Pause for 1 second at the bottom, getting a full stretch, then explode up,\nsticking your chest out pulling your shoulders back, get to full contraction pulling your\nelbows back as far as they go, don't pause and go back down slowly controlling the\nmovement; pull towards your upper abdomen or lower chest."
+    },
+    {
+        "name": "Incline push-ups",
+        "muscle": "Chest",
+        "type": "Horizontal Press",
+        "imageUrl": "https://i0.wp.com/blog.hellofresh.com/wp-content/uploads/2017/01/workout-push-ups.gif?resize=480%2C270&ssl=1",
+        "notes": "Maintain a straight spine and legs, don't let your pelvis fall. For this variation, put\nyour hands on a surface as high as a table or a countertop, and when that becomes\ntoo easy, just move on to the next level. The weight you're moving here is roughly\nequivalent to a bench press loaded with 35% of your body weight."
+    },
+    {
+        "name": "Inverted rows with bent knees",
+        "muscle": "Back",
+        "type": "Horizontal pull",
+        "imageUrl": "https://www.youtube.com/watch?v=cSzoVHHnuu0",
+        "notes": "Pause for 1 second at the bottom, getting a full stretch, then explode up, sticking\nyour chest out pulling your shoulders back, get to full contraction pulling your elbows\nback as far as they go, don't pause and go back down slowly controlling the\nmovement; pull towards your upper abdomen or lower chest. You can use an\noverhand grip or an underhand grip. You can use a stick and two chairs like in the\nexample, or a table\n, or the back of two chairs\n, or the bedsheet method"
+    },
+    {
+        "name": "Inverted rows with straight legs",
+        "muscle": "Back",
+        "type": "Horizontal pull",
+        "imageUrl": "https://www.youtube.com/watch?v=cSzoVHHnuu0",
+        "notes": "Pause for 1 second at the bottom, getting a full stretch, then explode up, sticking\nyour chest out pulling your shoulders back, get to full contraction pulling your elbows\nback as far as they go, don't pause and go back down slowly controlling the\nmovement; pull towards your upper abdomen or lower chest. You can use an\noverhand grip or an underhand grip. You can use a table like in the example, or a stick\nand two chairs\n, or the back of two chairs\n, or the bedsheet method"
+    },
+    {
+        "name": "Inverted Skullcrushers",
+        "muscle": "Triceps",
+        "type": "Isolation",
+        "imageUrl": "https://i.imgur.com/rMWqubP.gif",
+        "notes": "The more horizontal you are the harder the exercise, and conversely the more\nvertical you are the easier."
+    },
+    {
+        "name": "Knee diamond push-ups",
+        "muscle": "Triceps",
+        "type": "Close-grip Press",
+        "imageUrl": "https://www.youtube.com/watch?v=cSzoVHHnuu0",
+        "notes": ""
+    },
+    {
+        "name": "Knee one arm push-ups",
+        "muscle": "Chest",
+        "type": "Horizontal Press",
+        "imageUrl": "https://www.youtube.com/watch?v=cSzoVHHnuu0",
+        "notes": "The weight you're moving here is roughly equivalent to a bench press loaded with\n100% of your body weight, plus the stability demands. Because you usually can't move\nstraight from the archer push-up to the full one arm push-up because there's a big\ndifference in the resistance, you go through this intermediate variation first. Complete\nthe set with one arm, then move on to the other arm. Key points: your knees have to\nbe quite separated, and your resting hand is placed at the side of your thigh (don't put\nit behind your back). I recommend you put something cushy below the knee that's\nopposite to your working hand. Completely rest the chest on the floor on each rep for\nhalf a second, explode up, lock the elbow, maintain a half second contraction while\nattempting to bring your working hand across your body, descend with a full 2\nseconds tempo. To achieve balance, DON'T focus on flexing the spinal erectors\nopposite to your working arm, instead, focus on flexing the obliques (abs) of the same\nside as your working arm. If you can't complete 5 reps with each arm in one set,\ncontinue the set using Archer push-ups\nand/or do rest-pause until you do: finish the set with one arm, rest for 3 deep\nbreaths, continue the set inserting more rest pauses until you get 5 total reps with\nthat arm."
+    },
+    {
+        "name": "Knee push-ups",
+        "muscle": "Chest",
+        "type": "Horizontal Press",
+        "imageUrl": "https://www.youtube.com/watch?v=q7JIc1obaLU",
+        "notes": "The weight you're moving here is roughly equivalent to a bench press loaded with\n50% of your body weight. Lay on the floor, choose a comfortable hand placement\n(choose it at the bottom position, ideally you want a stretch on the pecs while being\ncomfortable at the shoulders and wrists), pull your shoulders back and down, stick\nyour chest out, contract the glutes so that your hips don't shoot up during the\nmovement, contract the abs so that you don't go into spinal hyperextension during\nthe movement, begin the execution: explode up, lock the elbows, maintain a half\nsecond contraction while attempting to bring your hands together, descend with a\ntwo full seconds tempo, at the bottom completely rest your chest on the floor to the\npoint your arms aren't pushing at all; wait half a second just to avoid rebound, reset,\nbegin the next rep."
+    },
+    {
+        "name": "Knee pushaways",
+        "muscle": "Chest",
+        "type": "Incline Press",
+        "imageUrl": "https://www.youtube.com/watch?v=q7JIc1obaLU",
+        "notes": "(2:36). Notice that this isn't a push-up with your knees on the floor, the movement at\nthe arms is different: you push yourself horizontally upwards like in the push-up, but\nyou also push yourself away vertically, resisting that motion with your legs, so that\nwhen your arms are extended they are above your head, like during an incline press."
+    },
+    {
+        "name": "Lateral raises",
+        "muscle": "Shoulders",
+        "type": "Side delt isolation",
+        "imageUrl": "https://i.imgur.com/oDSH5Rw.gif",
+        "notes": "use buckets, kegs, bags, cans, jugs, etc. filled with whatever, or bands. You can do\nthem unilaterally."
+    },
+    {
+        "name": "Leg-resisted bicep curls",
+        "muscle": "Biceps",
+        "type": "Curl",
+        "imageUrl": "https://www.youtube.com/watch?v=q7JIc1obaLU",
+        "notes": "You can also use a rope, chain, cable, etc."
+    },
+    {
+        "name": "Leg-resisted concentration curls",
+        "muscle": "Biceps",
+        "type": "Curl",
+        "imageUrl": "https://www.youtube.com/watch?v=q7JIc1obaLU",
+        "notes": "You can also use a rope, chain, cable, etc."
+    },
+    {
+        "name": "Negative pull-ups (or negative chin-ups)",
+        "muscle": "Back",
+        "type": "Vertical pull",
+        "imageUrl": "https://i.imgur.com/V5W9Zl2.gif",
+        "notes": "For when you are not strong enough to do pull-ups or chin-ups yet. You use a chair to\nput yourself into the starting position of a pull-up, then step away from it and go\ndown trying to make the descent as slow as possible (this is key). Repeat the process\nfor a total of 5 reps per set, if you have to take small breaks to get 5, that's ok. When\nyou see that you can go down really slow, try doing a full chin-up at the beginning of\nthe first set. From the moment you can do one chin-up, try doing as many as you can\non every set, filling the rest with just negatives to complete the 5 per set."
+    },
+    {
+        "name": "Nordic curls",
+        "muscle": "Hamstrings & Glutes",
+        "type": "Curl",
+        "imageUrl": "https://www.youtube.com/watch?v=q7JIc1obaLU",
+        "notes": "This is the heaviest hamstring exercise, but depending on how much assistance you\nuse from the hands, it can also be quite light. You need to ask someone for assistance\nor find a place to lock your feet, for the latter check out this awesome post with many\noptions to set it up."
+    },
+    {
+        "name": "One arm decline inverted rows",
+        "muscle": "Back",
+        "type": "Horizontal pull",
+        "imageUrl": "https://www.youtube.com/watch?v=q7JIc1obaLU",
+        "notes": "Basically the same as the\ndecline inverted rows\nexcept you only use one arm, so like the horizontal variation\nbut with your feet elevated. Avoid rotating the torso like this\n, keep it straight. Finish the set with one arm and then move to the other arm, don't\nalternate one rep each. Pause for 1 second at the bottom, getting a full stretch, then\nexplode up, sticking your chest out pulling your shoulders back, get to full contraction\npulling your elbows back as far as they go, don't pause and go back down slowly\ncontrolling the movement; pull towards your upper abdomen or lower chest. You can\nuse an overhand grip or an underhand grip. You can use a table\n, or a stick and two chairs\n, or the bedsheet method"
+    },
+    {
+        "name": "One arm inverted rows with bent knees",
+        "muscle": "Back",
+        "type": "Horizontal pull",
+        "imageUrl": "https://www.youtube.com/watch?v=q7JIc1obaLU",
+        "notes": "Basically the same\nas the inverted rows with bent knees\nexcept you only use one arm, and you're going to have to separate your feet more to\nmaintain balance (see the straight legged variation\nfor reference). Avoid rotating the torso like this\n, keep it straight. Finish the set with one arm and then move to the other arm, don't\nalternate one rep each. Pause for 1 second at the bottom, getting a full stretch, then\nexplode up, sticking your chest out pulling your shoulders back, get to full contraction\npulling your elbows back as far as they go, don't pause and go back down slowly\ncontrolling the movement; pull towards your upper abdomen or lower chest. You can\nuse an overhand grip or an underhand grip. You can use a table\n, or a stick and two chairs\n, or the bedsheet method"
+    },
+    {
+        "name": "One arm inverted rows with straight legs",
+        "muscle": "Back",
+        "type": "Horizontal pull",
+        "imageUrl": "https://www.youtube.com/watch?v=q7JIc1obaLU",
+        "notes": "Notice that you have to separate your legs to maintain balance . Avoid rotating the\ntorso like this\n, keep it straight. Finish the set with one arm and then move to the other arm, don't\nalternate one rep each. Pause for 1 second at the bottom, getting a full stretch, then\nexplode up, sticking your chest out pulling your shoulders back, get to full contraction\npulling your elbows back as far as they go, don't pause and go back down slowly\ncontrolling the movement; pull towards your upper abdomen or lower chest. You can\nuse an overhand grip or an underhand grip. You can use a table\n, or a stick and two chairs\n, or the bedsheet method"
+    },
+    {
+        "name": "One arm pull-ups",
+        "muscle": "Back",
+        "type": "Vertical pull",
+        "imageUrl": "https://www.youtube.com/watch?v=vdjWgw98EeI",
+        "notes": "The final boss"
+    },
+    {
+        "name": "One arm push-ups",
+        "muscle": "Chest",
+        "type": "Horizontal Press",
+        "imageUrl": "https://www.youtube.com/watch?v=q7JIc1obaLU",
+        "notes": "The weight you're moving here is roughly equivalent to a bench press loaded with\n1.3 times your body weight, plus the stability demands. Complete the set with one\narm, then move on to the other arm. Completely rest the chest on the floor on each\nrep for half a second, explode up, lock the elbow, maintain a half second contraction\nwhile attempting to bring your working hand across your body, descend with a full 2\nseconds tempo. Don't do funky stuff with your shoulder\n(2:23) you will see TONS of people screwing this up out of rushing to be able to do\nthis exercise; know that not only is this bad for the shoulder, it removes both ROM\nand tension from the chest. DON'T twist your torso at any point; to achieve balance,\nDON'T focus on flexing the spinal erectors opposite to your working arm, instead,\nfocus on flexing the obliques (abs) of the same side as your working arm. If you can't\ncomplete 5 reps with each arm in one set, continue the set with your knees on the\nfloor and/or do rest-pause until you do: finish the set with one arm, rest for 3 deep\nbreaths, continue the set inserting more rest pauses until you get 5 total reps with\nthat arm. To keep increasing the intensity, either use bands or find a way to put\nweight on your back."
+    },
+    {
+        "name": "Pike push-ups",
+        "muscle": "Shoulders",
+        "type": "Vertical press",
+        "imageUrl": "https://www.youtube.com/watch?v=1Jjjyp4uhks&feature=youtu.be&t=28",
+        "notes": "(0:28-1:28). If you're not strong enough to perform this movement for at least 3-5\nreps yet, skip the vertical presses and just continue getting stronger with your\nhorizontal and incline presses, the strength you build there has a carryover effect to\nthis one, so eventually you'll be able to do it."
+    },
+    {
+        "name": "Piked inverted rows",
+        "muscle": "Back",
+        "type": "Horizontal pull",
+        "imageUrl": "https://www.youtube.com/watch?v=q7JIc1obaLU",
+        "notes": "Piked inverted rows\n. At home your do them with this table variation\nor the two chairs and the stick variation\n(only if you can secure the stick really tight so that it doesn't slide and the chairs so\nthat they don't flip) by just elevating the legs in a pike; you can also use a pull-up bar\nlike in the example."
+    },
+    {
+        "name": "Pistol squats",
+        "muscle": "Quads & Glutes",
+        "type": "Quad compound",
+        "imageUrl": "https://www.youtube.com/watch?v=7NvOuty_Fnc",
+        "notes": "Don't just let yourself drop, use a 2 full seconds negative. Use something like two\nchairs to hold on to if you find them too difficult or lack balance. To increase the\nresistance, besides the natural way of holding something heavy or using bands, you\ncan also load them quite easily by using friction against a wall"
+    },
+    {
+        "name": "Plank",
+        "muscle": "Abs",
+        "type": "Core",
+        "imageUrl": "https://media1.giphy.com/media/2UqZvQq4p9DjTBDVRc/giphy.gif",
+        "notes": ""
+    },
+    {
+        "name": "Pull-ups",
+        "muscle": "Back",
+        "type": "Vertical pull",
+        "imageUrl": "https://i.imgur.com/wfcYsLQ.gif",
+        "notes": "Use a dead hang technique, going all the way down till full stretch leaving your\nshoulders rise completely like in the example. Explode up, don't pause at the top,\ndescend with a 2 full seconds negative, pause at full stretch for half a second, begin\nthe next rep."
+    },
+    {
+        "name": "Push-ups",
+        "muscle": "Chest",
+        "type": "Horizontal Press",
+        "imageUrl": "https://www.youtube.com/watch?v=q7JIc1obaLU",
+        "notes": "The weight you're moving here is roughly equivalent to a bench press loaded with\n65% of your body weight. You can increase the load with bands\n. Lay on the floor, choose a comfortable hand placement (choose it at the bottom\nposition, ideally you want a stretch on the pecs while being comfortable at the\nshoulders and wrists), pull your shoulders back and down, stick your chest out,\ncontract the glutes so that your hips don't shoot up during the movement, contract\nthe abs so that you don't go into spinal hyperextension during the movement, begin\nthe execution: explode up, lock the elbows, maintain a half second contraction while\nattempting to bring your hands together, descend with a two full seconds tempo, at\nthe bottom completely rest your chest on the floor to the point your arms aren't\npushing at all; wait half a second just to avoid rebound, reset, begin the next rep. Also\ncheck out this video"
+    },
+    {
+        "name": "Regular curls using buckets",
+        "muscle": "Biceps",
+        "type": "Curl",
+        "imageUrl": "https://www.youtube.com/watch?v=q7JIc1obaLU",
+        "notes": "kegs, bags, cans, jugs, etc. filled with whatever, or bands."
+    },
+    {
+        "name": "Reverse lunges",
+        "muscle": "Quads & Glutes",
+        "type": "Quad compound",
+        "imageUrl": "https://i.imgur.com/enSbTQ6.gif",
+        "notes": ""
+    },
+    {
+        "name": "Rings Hanging tucks",
+        "muscle": "Abs",
+        "type": "Core",
+        "imageUrl": "https://gfycat.com/horribleimperturbablekitten",
+        "notes": ""
+    },
+    {
+        "name": "Rings Roll Out",
+        "muscle": "Abs",
+        "type": "Core",
+        "imageUrl": "https://www.youtube.com/watch?v=LBUfnmugKLw",
+        "notes": ""
+    },
+    {
+        "name": "Seated band overhead press",
+        "muscle": "Shoulders",
+        "type": "Vertical press",
+        "imageUrl": "https://www.youtube.com/watch?v=q7JIc1obaLU",
+        "notes": ""
+    },
+    {
+        "name": "Shoulder Press",
+        "muscle": "Shoulders",
+        "type": "Vertical press",
+        "imageUrl": "",
+        "notes": ""
+    },
+    {
+        "name": "Shrugs",
+        "muscle": "Back",
+        "type": "Isolation",
+        "imageUrl": "https://www.youtube.com/watch?v=q7JIc1obaLU",
+        "notes": "(holding buckets, kegs, bags, cans, jugs, etc. filled with whatever). 1\nfull second concentric, hold 1 second at the top, 3-4 seconds eccentric, hold 1 second\nat the bottom."
+    },
+    {
+        "name": "Single-leg romanian deadlift",
+        "muscle": "Hamstrings & Glutes",
+        "type": "Lift",
+        "imageUrl": "https://www.youtube.com/watch?v=GoKjrvJi-Iw&feature=youtu.be",
+        "notes": "Load them holding buckets, kegs, bags, cans, jugs, etc. filled with whatever, or using\nbands."
+    },
+    {
+        "name": "Sissy squats",
+        "muscle": "Quads & Glutes",
+        "type": "Quad compound",
+        "imageUrl": "https://www.youtube.com/watch?v=VUiFlZ2FsKA",
+        "notes": ""
+    },
+    {
+        "name": "Sliding hamstring curl 1",
+        "muscle": "Hamstrings & Glutes",
+        "type": "Curl",
+        "imageUrl": "https://i.imgur.com/NzvAOOR.gif",
+        "notes": "Notice that there's a sliding material under the feet, can be a piece of cloth, paper,\netc."
+    },
+    {
+        "name": "Sliding hamstring curl 2",
+        "muscle": "Hamstrings & Glutes",
+        "type": "Curl",
+        "imageUrl": "https://i.imgur.com/0ela8FL.gif",
+        "notes": ""
+    },
+    {
+        "name": "Sliding hamstring curl 3",
+        "muscle": "Hamstrings & Glutes",
+        "type": "Curl",
+        "imageUrl": "https://i.imgur.com/zwvKhkI.gif",
+        "notes": ""
+    },
+    {
+        "name": "Sliding hamstring curl 4",
+        "muscle": "Hamstrings & Glutes",
+        "type": "Curl",
+        "imageUrl": "https://i.imgur.com/PzunYhu.gif",
+        "notes": "Finish the whole set with one leg, then move on to the other leg."
+    },
+    {
+        "name": "Sliding hamstring curl 5",
+        "muscle": "Hamstrings & Glutes",
+        "type": "Curl",
+        "imageUrl": "https://i.imgur.com/5A73etM.gif",
+        "notes": ""
+    },
+    {
+        "name": "Sliding hamstring curl 5",
+        "muscle": "Hamstrings & Glutes",
+        "type": "Curl",
+        "imageUrl": "https://i.imgur.com/Co3mJSp.gif",
+        "notes": ""
+    },
+    {
+        "name": "Sliding pull-overs",
+        "muscle": "Back",
+        "type": "Isolation",
+        "imageUrl": "https://i.imgur.com/Xo1RQIy.gif",
+        "notes": "To increase the resistance you can sustain yourself with your feet instead of your\nknees, and/or do them with one arm."
+    },
+    {
+        "name": "Squats (weights)",
+        "muscle": "",
+        "type": "",
+        "imageUrl": "",
+        "notes": ""
+    },
+    {
+        "name": "Standing calf raises",
+        "muscle": "Calves",
+        "type": "Raises",
+        "imageUrl": "https://www.youtube.com/watch?v=q7JIc1obaLU",
+        "notes": "Check this video\nto learn the proper form."
+    },
+    {
+        "name": "Step-ups",
+        "muscle": "Quads & Glutes",
+        "type": "Quad compound",
+        "imageUrl": "https://www.youtube.com/watch?v=q7JIc1obaLU",
+        "notes": "The higher the step the better. Finish the set with one leg, then move on to the other\nleg."
+    },
+    {
+        "name": "Towel slide lateral raises (8:27)",
+        "muscle": "Shoulders",
+        "type": "Side delt isolation",
+        "imageUrl": "https://www.youtube.com/watch?v=q7JIc1obaLU",
+        "notes": ""
+    },
+    {
+        "name": "Unilateral standing calf raises",
+        "muscle": "Calves",
+        "type": "Raises",
+        "imageUrl": "https://i.imgur.com/KqNQgMy.gif",
+        "notes": "Check this video\nto learn the proper form."
+    },
+    {
+        "name": "V-Snaps",
+        "muscle": "Abs",
+        "type": "Core",
+        "imageUrl": "",
+        "notes": ""
+    },
+    {
+        "name": "Wall diamond push-ups",
+        "muscle": "Triceps",
+        "type": "Close-grip Press",
+        "imageUrl": "https://www.youtube.com/watch?v=q7JIc1obaLU",
+        "notes": ""
+    },
+    {
+        "name": "Internal Rotation (90deg)",
+        "muscle": "Shoulders",
+        "type": "Isolation",
+        "imageUrl": "https://s3.amazonaws.com/medbridgemarketing/john-snyder/best+exercises+part+2/gifs/shoulder-external-rotation.gif",
+        "notes": "control and constant tension keeping wrist straight"
+    },
+    {
+        "name": "External Rotation (90 deg)",
+        "muscle": "Shoulders",
+        "type": "Isolation",
+        "imageUrl": "https://www.lifemark.ca/document/users/guillaume.morissette%40lifemark.ca/externalshouldergif.gif",
+        "notes": ""
+    },
+    {
+        "name": "Face Pull",
+        "muscle": "Shoulders",
+        "type": "Facepull variation",
+        "imageUrl": "https://i0.wp.com/post.healthline.com/wp-content/uploads/2019/03/400x400_Exercises_to_Relieve_Upper_Back_Pain_Face_Pull.gif",
+        "notes": ""
+    },
+    {
+        "name": "Side Lying External Rotation",
+        "muscle": "Shoulders",
+        "type": "Isolation",
+        "imageUrl": "https://www.vissco.com/wp-content/uploads/animation/sub/side-lying-shoulder-external-rotation-with-dumbbellside-lying-dumbbell-out-rotation.gif",
+        "notes": ""
+    },
+    {
+        "name": "Dumbbell Chest Press",
+        "muscle": "Chest",
+        "type": "Horizontal Press",
+        "imageUrl": "https://149874912.v2.pressablecdn.com/wp-content/uploads/2020/03/Dumbbell-Chest-Press.gif",
+        "notes": "Shoulder blades down and back 60-70 degs on floor"
+    },
+    {
+        "name": "Arnold Press",
+        "muscle": "Shoulders",
+        "type": "Vertical press",
+        "imageUrl": "https://i.pinimg.com/originals/ed/eb/b2/edebb2c8cc8e1efb5cd2015de455e41d.gif",
+        "notes": "relaxed at top Rot and bent elbow. Chin up relaxed rot"
+    },
+    {
+        "name": "Single Arm Skull Crushers",
+        "muscle": "Triceps",
+        "type": "Curl",
+        "imageUrl": "https://www.onlinearcheryacademy.com/wp-content/uploads/2019/05/Recurve-Archery-Strength-Exercises-Skullcrushers-Dumbell.gif",
+        "notes": ""
+    }
+]

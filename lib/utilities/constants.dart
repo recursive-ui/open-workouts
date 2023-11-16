@@ -1,6 +1,37 @@
 import 'package:flutter/material.dart';
 
-const commonUnits = ['kg', 'g'];
+const commonUnits = ['kg', 'g', 'min', 's'];
+
+const List<String> muscles = [
+  'Abs',
+  'Back',
+  'Biceps',
+  'Calves',
+  'Chest',
+  'Glutes',
+  'Hamstrings & Glutes',
+  'Quads & Glutes',
+  'Shoulders',
+  'Triceps'
+];
+
+const List<String> exerciseTypes = [
+  'Close-grip Press',
+  'Core',
+  'Curl',
+  'Facepull variation',
+  'Horizontal Press',
+  'Horizontal pull',
+  'Horizontal Push',
+  'Incline Press',
+  'Isolation',
+  'Lift',
+  'Quad compound',
+  'Raises',
+  'Side delt isolation',
+  'Vertical press',
+  'Vertical pull',
+];
 
 class ThemeColors {
   static const Color kOffWhite = Color(0xFFF5F5F5);

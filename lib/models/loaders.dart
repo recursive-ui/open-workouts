@@ -19,7 +19,8 @@ void loadExercisesFromJson({jsonURL, bool isLocal = false}) async {
   data.forEach((e) {
     e.removeWhere((key, value) =>
         key == null || value == null || value == '' || value == 'null');
-    exerciseBox.add(Exercise.fromMap(e));
+    Exercise newExercise = Exercise.fromMap(e);
+    exerciseBox.put(newExercise.name, newExercise);
   });
 }
 
