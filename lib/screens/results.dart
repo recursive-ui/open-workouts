@@ -59,17 +59,18 @@ class _ResultsScreenState extends State<ResultsScreen> {
     }
     List<DateTime> resultDates = setResults.map((e) => e.date).toSet().toList();
     resultDates.sort();
-    resultDates = resultDates.reversed.toList();
     List<FlSpot> spots = [];
 
     if (_selectedChartType[0] == true) {
-      for (int i = 0; i < resultDates.length - 1; i++) {
+      spots.add(FlSpot(resultDates[0].microsecondsSinceEpoch.toDouble(), 0));
+
+      for (int i = 1; i < resultDates.length; i++) {
         Results curResult =
             setResults.firstWhere((e) => e.date == resultDates[i]);
         Results? prevResult =
-            setResults.firstWhere((e) => e.date == resultDates[i + 1]);
+            setResults.firstWhere((e) => e.date == resultDates[i - 1]);
         spots.add(FlSpot(resultDates[i].microsecondsSinceEpoch.toDouble(),
-            curResult.percentImprovement(prevResult) * 100));
+            curResult.percentImprovement(prevResult) * 100 + spots[i - 1].y));
       }
     } else if (_selectedChartType[1] == true) {
       for (int i = 0; i < resultDates.length; i++) {
@@ -98,9 +99,10 @@ class _ResultsScreenState extends State<ResultsScreen> {
     }
     List<DateTime> resultDates = setResults.map((e) => e.date).toSet().toList();
     resultDates.sort();
-    resultDates = resultDates.reversed.toList();
-    List<FlSpot> spots = [];
-    for (int i = 0; i < resultDates.length - 1; i++) {
+    List<FlSpot> spots = [
+      FlSpot(resultDates[0].microsecondsSinceEpoch.toDouble(), 0)
+    ];
+    for (int i = 1; i < resultDates.length; i++) {
       List<String> exercises = results
           .where((e) => e.date == resultDates[i])
           .map((e) => e.exerciseName)
@@ -110,14 +112,14 @@ class _ResultsScreenState extends State<ResultsScreen> {
         Results? curResult = setResults.firstWhereOrNull(
             (e) => e.date == resultDates[i] && e.exerciseName == exer);
         Results? prevResult = setResults.firstWhereOrNull(
-            (e) => e.date == resultDates[i + 1] && e.exerciseName == exer);
+            (e) => e.date == resultDates[i - 1] && e.exerciseName == exer);
         if (prevResult != null && curResult != null) {
           values.add(curResult.percentImprovement(prevResult));
         }
       }
       if (values.length > 1) {
         spots.add(FlSpot(resultDates[i].microsecondsSinceEpoch.toDouble(),
-            mean(values) * 100));
+            mean(values) * 100 + spots[i - 1].y));
       }
     }
     return spots;

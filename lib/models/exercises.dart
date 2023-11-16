@@ -56,7 +56,14 @@ class Results extends HiveObject {
   @HiveField(6)
   String? exerciseSet;
 
-  Results({required this.date, required this.exerciseName, this.exerciseSet});
+  Results(
+      {required this.date,
+      required this.exerciseName,
+      this.reps,
+      this.measure,
+      this.units,
+      this.notes,
+      this.exerciseSet});
 
   int get sets {
     if (reps != null) {
@@ -88,6 +95,18 @@ class Results extends HiveObject {
       measureDiff = (measure! - previous.measure!) / previous.measure!;
     }
     return max(repsDiff, measureDiff);
+  }
+
+  Results copy() {
+    return Results(
+      date: date,
+      exerciseName: exerciseName,
+      reps: reps,
+      measure: measure,
+      units: units,
+      notes: notes,
+      exerciseSet: exerciseSet,
+    );
   }
 
   Results.fromMap(Map<String, dynamic> map)

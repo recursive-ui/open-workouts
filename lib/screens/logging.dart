@@ -136,7 +136,7 @@ class _LoggingPageState extends State<LoggingPage> {
   void logResult(String exerciseName) {
     Results? resultToAdd = curResultsBox.get(exerciseName);
     if (resultToAdd != null) {
-      resultsBox.add(resultToAdd);
+      resultsBox.add(resultToAdd.copy());
       curResultsBox.delete(exerciseName);
     }
     setState(() {
@@ -152,15 +152,11 @@ class _LoggingPageState extends State<LoggingPage> {
   }
 
   void updateDate(DateTime newDate) {
-    Map<String, Results> newResults =
-        Map<String, Results>.from(curResultsBox.toMap());
-    for (Results result in newResults.values) {
-      result.date = date;
+    for (Results result in curResultsBox.values) {
+      result.date = newDate;
     }
-
-    curResultsBox.clear();
-    curResultsBox.putAll(newResults);
     setState(() {
+      date = newDate;
       resultsNames = List<String>.from(curResultsBox.keys);
     });
   }
@@ -211,7 +207,7 @@ class _LoggingPageState extends State<LoggingPage> {
               onPressed: () {
                 for (Results res in curResultsBox.values) {
                   if (res.reps!.any((e) => e > 0)) {
-                    resultsBox.add(res);
+                    resultsBox.add(res.copy());
                   }
                 }
                 curResultsBox.clear();
